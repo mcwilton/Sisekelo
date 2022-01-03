@@ -1,9 +1,11 @@
 from django.db import models
 from courses.models import Learnership
 
+
 class Highest_qualification(models.Model):
     id = models.BigAutoField
     qualification = models.CharField(max_length=255)
+
 
 class Application(models.Model):
     EQUITY = (
@@ -32,7 +34,7 @@ class Application(models.Model):
     birth_date = models.DateField(null=True)
     equity = models.CharField(max_length=30, choices=EQUITY, default='B')
     disability = models.CharField(max_length=30, choices=DISABILITY, null=True)
-    yes_specify = models.TextField(null=True)
+    if_yes_specify = models.TextField(null=True)
     street_address = models.CharField(max_length=255)
     street_address2 = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
@@ -44,15 +46,14 @@ class Application(models.Model):
     south_african_citizen = models.CharField(max_length=30, choices=CITIZEN, null=True)
     non_citizen_docs = models.FileField(upload_to='uploads/non_citizen_docs/')
     highest_qualification = models.ForeignKey(Highest_qualification, on_delete=models.CASCADE, null=True)
-    nk_name = models.CharField(max_length=255)
-    nk_surname = models.CharField(max_length=255)
-    nk_home_tel = models.CharField(max_length=255)
-    nk_cellphone = models.CharField(max_length=255)
-    nk_email = models.EmailField(null=True)
+    next_of_keen_name = models.CharField(max_length=255)
+    next_of_keen_surname = models.CharField(max_length=255)
+    next_of_keen_home_tel = models.CharField(max_length=255)
+    next_of_keen_cellphone = models.CharField(max_length=255)
+    next_of_keen_email = models.EmailField(null=True)
     name_of_employer = models.CharField(max_length=255)
     comments = models.TextField(null=True)
     agreement = models.CharField(max_length=30, choices=DISABILITY, null=True)
 
-
     def __str__(self):
-        return self.title
+        return self.course
