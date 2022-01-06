@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from .forms import ApplicationForm
-
+from django.contrib.auth.decorators import login_required
 
 # def post_new(request):
 #     form = ApplicationForm()
 #     return render(request, ', {'form': form})'
 
-
+@login_required
 def post_new(request):
     form = ApplicationForm()
     return render(request, 'application/application.html', {'form': form})

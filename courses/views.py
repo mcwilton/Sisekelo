@@ -47,7 +47,7 @@ def index(request):
     jobs = Learnership.objects.all().count()
     # #user = User.objects.all().count()
     company_name = Learnership.objects.all()
-    paginator = Paginator(qs, 4)  # Show 5 courses per page
+    paginator = Paginator(qs, 5)  # Show 5 courses per page
     page = request.GET.get('page')
     try:
         qs = paginator.page(page)
@@ -89,8 +89,6 @@ def short_course(request):
         #'candidates': user
     }
     return render(request, "application/application.html", context)
-
-
 
 
 def post_new(request):

@@ -1305,6 +1305,47 @@ Theme Version:	8.3.0
 	opacity: 0.45 !important;
 }
 
+/*course layout*/
+.col-md-3-custom {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 18%;
+    align-items: center;
+}
+
+.row-custom{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -65px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    /* align-items: center; */
+    /* align-content: center; */
+    /* align-self: auto; */
+    text-align: center;
+}
+
+.course-box-custom{
+
+	background-color: white;
+	border-color: orangered;
+	padding-top: 3%;
+	
+	margin-left: 8px;
+}
+
+.hr-custom {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    /* border: 0; */
+    /* border-top: 1px solid #f6cc00; */
+    /* color: #f6cc00; */
+    background-color: #f6cc00;
+}
+
+
 /* Background Transparent */
 .background-transparent,
 .bg-transparent {
@@ -17027,7 +17068,7 @@ small, .small {
 
 /* Paragraphs */
 p {
-	color: #777;
+	color: #212529;
 	line-height: 26px;
 	margin: 0 0 20px;
 }
@@ -18042,7 +18083,7 @@ section.section-custom-map section.section {
 /* Home Intro */
 .home-intro {
 	background-color: #ffc72d;
-	margin-bottom: 30px;
+	margin-bottom: px;
 	overflow: hidden;
 	padding: 38.4px 0;
 	padding: 2.4rem 0;

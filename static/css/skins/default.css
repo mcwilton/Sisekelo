@@ -273,6 +273,8 @@ html .svg-stroke-color-light svg polygon {
 html .bg-color-primary,
 html .bg-primary {
 	background-color: #0088CC !important;
+	padding-bottom: 30px;
+
 }
 
 html .bg-color-hover-primary:hover,

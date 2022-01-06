@@ -1,32 +1,53 @@
 from django.db import models
 from courses.models import Learnership
 
+# class Highest_qualification(models.Model):
+#     # id = models.BigAutoField
+#     # enabled = models.BooleanField(default=True)
+#     qualification_number = models.IntegerField(auto_created=True, default=0)
+#     qualification = models.CharField(max_length=255)
 
-class Highest_qualification(models.Model):
-    id = models.BigAutoField
+class Qualification(models.Model):
+    # qualification_number = models.IntegerField(auto_created=True, default=0)
     qualification = models.CharField(max_length=255)
 
 
 class Application(models.Model):
+    HIGHEST_QUALIFICATION = (
+        ('Matric', 'Matric'),
+        ('Degree', 'Degree'),
+        ('National Diploma', 'National Diploma'),
+        )
+    ACCREDITED_TYPE = (
+        ('Learnership', 'Learnership'),
+        ('Short Courses', 'Short Courses'),
+        ('Skills Program', 'Skills Program'),
+        ('Work Readiness Program', 'Work Readiness Program'),
+        ('Financial Literacy', 'Financial Literacy'),
+        ('Data Science & Python', 'Data Science & Python'),
+        ('Digital Immersion Program', 'Digital Immersion Program'),
+        ('Specialized Development Program', 'Specialized Development Program'),
+        ('Animation Program', 'Animation Program'),
+     )
     EQUITY = (
         ('B', 'Black'),
         ('C', 'Colored'),
         ('I', 'Indian'),
         ('W', 'White'),
-        ('O', 'Other')
-    )
-
+        ('O', 'Other'),
+     )
     DISABILITY = (
         ('yes', 'Yes'),
         ('no', 'No'),
-    )
-
+     )
     CITIZEN = (
         ('yes', 'Yes'),
         ('asylum', 'Asylum'),
         ('visa', 'Visa'),
-    )
-    course = models.ForeignKey(Learnership, on_delete=models.CASCADE, null=True)
+     )
+
+    course = models.CharField(max_length=50, choices=ACCREDITED_TYPE, default='Learnership')
+    # course = models.ForeignKey(Learnership, on_delete=models.CASCADE, null=True)
     # course = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
     mid_name = models.CharField(max_length=255)
@@ -45,7 +66,7 @@ class Application(models.Model):
     work_phone = models.CharField(max_length=14)
     south_african_citizen = models.CharField(max_length=30, choices=CITIZEN, null=True)
     non_citizen_docs = models.FileField(upload_to='uploads/non_citizen_docs/')
-    highest_qualification = models.ForeignKey(Highest_qualification, on_delete=models.CASCADE, null=True)
+    qualification  = models.CharField(max_length=50, choices=HIGHEST_QUALIFICATION, default='Matric')
     next_of_keen_name = models.CharField(max_length=255)
     next_of_keen_surname = models.CharField(max_length=255)
     next_of_keen_home_tel = models.CharField(max_length=255)
