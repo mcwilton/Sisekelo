@@ -22,6 +22,16 @@
 
         <!-- Web Fonts  -->
         <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css' %}">
+<style type="text/css">
+    
+    ul.list li{
+  width: auto;
+  float: left;
+}
+</style>
+
+
+
 
         <!-- Vendor CSS -->
         <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
@@ -40,10 +50,11 @@
         <link rel="stylesheet" href="{% static 'css/theme-elements.css' %}">
         <link rel="stylesheet" href="{% static 'css/theme-blog.css' %}">
         <link rel="stylesheet" href="{% static 'css/theme-shop.css' %}">
-
+        <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+        <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
         <!-- Current Page CSS -->
         <link rel="stylesheet" href="{% static 'vendor/circle-flip-slideshow/css/component.css' %}">
-
         <!-- Skin CSS -->
         <link id="skincss" rel="stylesheet" href="{% static 'css/skins/default.css' %}">
 
@@ -116,7 +127,7 @@
                                             <nav class="collapse">
                                                 <ul class="nav nav-pills" id="mainNav">
                                                     <li class="dropdown">
-                                                        <a class="dropdown-item dropdown-toggle" href="#>
+                                                        <a class="dropdown-item dropdown-toggle" href="#">
                                                             Home
                                                         </a>
                                                             <li class="dropdown-submenu">
@@ -180,11 +191,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
-
-
-
                 <div class="home-intro" id="home-intro">
                     <div class="container">
 
@@ -205,70 +211,29 @@
 
                     </div>
                 </div>
-
-
 <section class="site-section">
      <div class="container">
+        <p style="color:red;">Current Courses</p>
 
-
-
-        <div class="container">
-        {% for q in query %}
-  <div class="row">
-    <div class="col">
-    {{ q.title }}
-     Price: {{ q.price }}
-    Duration {{ q.duration }}
-    </div>
-    <div class="col order-12">
-     {{ q.title }}
-     Price: {{ q.price }}
-    Duration {{ q.duration }}
-    </div>
-    <div class="col order-1">
-     {{ q.title }}
-     Price: {{ q.price }}
-    Duration {{ q.duration }}
-    </div>
-  </div>
+      <div class="row">
+ {% for q in query %}
+  <article class="col-md-3">
+     <img src="/{{ STATIC_ROOT}}/learnership_images/{{q.image.URL}}" width="120"/>
+    <p><b>{{ q.title }}</b></p>
+      {{ q.description |truncatewords:15}}
+      <p class="">Duration: {{ q.duration }}</p>
+   <p class="">{{ q.start_date}}</p>
+   <p class="">{{q.nfq_level}}
+    <p class="">Credits {{ q.credits}}</p>  
+     <span class="badge badge-primary px-2 py-1 mb-3" >       <a href="{% url 'post_new' %}" class="course_links" >Apply Now</a> </span>
+  </article>
+{% if forloop.counter|divisibleby:4 %}
+</div>
+<div class="row">
+{% endif %}
   {% endfor %}
 </div>
-
-
-        <div class="mb-5">
-             {% for q in query %}
-
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="#"><img src={{q.image}} alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-             <p> {{ q.title }}</p>
-            <!--  <span class="badge badge-primary px-2 py-1 mb-3">
-                  
-              </span>-->
-              <p class="meta">Mode Of Delivery:{{ q.mode_of_delivery }}, 
-              Duration <strong> {{ q.duration }}</strong> 
-              Price: <strong>{{ q.price }}</strong></p>
             
-              
-            </div>
-            <div class="col-md-3 text-left">
-              <a href="{% url 'post_new' %}" >Apply Now</a>
-              <span class="meta"></span>
-              <p>{{ q.brochure }}</p>
-            </div>   
-
-       </div>
-       <strong class="text-black"></strong>            
-            </div>
- <h4></h4>
-{% endfor %}
-  <p>{{ q.description }}</p>
-        </div>
-
-<div class="col-md-3 text-md-right">
-              
         <div class="row pagination-wrap">
           <div class="col-md-6 text-center text-md-left">
             <div class="custom-pagination ml-auto">
@@ -286,6 +251,81 @@
         </div>
       </div>
     </section>
+<hr>
+
+     
+            
+        <div class="row pagination-wrap">
+          <div class="col-md-6 text-center text-md-left">
+            <div class="custom-pagination ml-auto">
+              {% if query.has_previous %}
+              <a  href="?page={{ query.previous_page_number }}" class="prev">Previous</a>
+              {% endif %}
+              <div class="d-inline-block">
+                Page <a href="#" class="active">{{ query.number }}</a> of  {{ query.paginator.num_pages }}
+              </div>
+              {% if query.has_next %}
+              <a href="?page={{ query.next_page_number }}" class="next">Next</a>
+               {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+<div class="container">
+        <p style="color:red;">Short Courses</p>
+
+      <div class="row">
+ {% for course in courses %}
+  <article class="col-md-3">
+     <img src="/{{ STATIC_ROOT}}/learnership_images/{{q.image.URL}}" width="120"/>
+    <p><b>{{ course.title }}</b></p>
+      {{ course.description |truncatewords:10}}
+      <p class="">Duration: {{ course.overview }}</p>
+   <p class="">{{ course.start_date}}</p>
+   <p class="">{{course.nfq_level}}
+    <p class="">Credits {{ course.credits}}</p>  
+     <span class="badge badge-primary px-2 py-1 mb-3" >       <a href="{% url 'post_new' %}" class="course_links" >Apply Now</a> </span>
+  </article>
+{% if forloop.counter|divisibleby:4 %}
+</div>
+<div class="row">
+{% endif %}
+  {% endfor %}
+</div>
+
+<!-- For page navigation links -->
+<div class="pagination" style="width: fit-content;">
+    <span class="step-links">
+    {% if page_obj.has_previous %}
+        <a href="?page=1" class="page-link" style="display: inline;">&laquo; first</a>
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-link" style="display: inline;">previous</a>
+    {% endif %}
+
+    <span class="current">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+    </span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="page-link" style="display: inline;">next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}" class="page-link" style="display: inline;">last &raquo;</a>
+    {% endif %}
+    </span>
+</div>
+
+
+
+
+
+
+
+
 
 
 

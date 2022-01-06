@@ -1,0 +1,78 @@
+<!--
+
+            <p></p>
+{{q.image}}
+        {% for q in query %}
+  <div class="course_row">
+    <div class="col course_boarder">
+    <img src="/{{ STATIC_ROOT}}/learnership_images/{{q.image.URL}}" width="120"/>
+    <b>{{ q.title }}</b>
+ <b>   {{q.certificate_type}}</b>    
+    </div>
+    <div class="col order-1" >  
+     Price: {{ q.price }}
+       <p class="p_white">Mode Of Delivery: {{q.mode_of_delivery}}</p>
+
+    </div>
+    <div class="col order-1">   
+    <p class="p_white">Duration: {{ q.duration }}</p>
+   <p class="p_white"> Start Date {{ q.start_date}}</p>
+    </div>
+    <div class="col order-1">
+    <p class="p_white">{{q.nfq_level}}
+    <p class="p_white">Credits {{ q.credits}}</p>  
+    </div>
+    <div class="col order-1" > 
+    {{ q.description |truncatewords:10}}
+    </div>
+      <hr>
+    <div class="col order-1 vl"  >
+    <p class="p_white">Brochure</p>
+    <span class="badge badge-primary px-2 py-1 mb-3" >       <a href="{% url 'post_new' %}" class="course_links" >Apply Now</a> </span>
+
+      <hr>
+      <br>
+    </div> 
+  <hr>
+  <br>
+  </div>
+
+
+  {% endfor %}
+  <hr>
+</div>
+
+
+        <div >
+
+  <p>{{ q.description }}</p>
+        </div>
+
+
+    {% for q in query %}
+  <div class="col-lg-4">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center">{{q.title}}</h5>
+            <h6 class="card-price text-center">${{ q.price}}<span class="period">/month</span></h6>
+            <hr>
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>{{q.duration}}</strong></li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>50GB Storage</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ q.credits}}</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private Projects</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Free Subdomain</li>
+              <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status
+                Reports</li>
+            </ul>
+            <div class="d-grid">
+              <a href="#" class="btn btn-primary text-uppercase">Button</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+   {% endfor %}
+
+<div class="col-md-3 text-md-right">-->

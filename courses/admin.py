@@ -1,13 +1,19 @@
 from django.contrib import admin
-from .models import Learnership, Nfq, Accredited_Program, Skills_Program, Specialized_Course, Program_Catalogue
+from .models import Learnership,  Short_Course, Nfq, Accredited_Program, Skills_Program, Specialized_Course, Program_Catalogue
 
 admin.site.register(Program_Catalogue)
 
 @admin.register(Learnership)
 class LearnershipAdmin(admin.ModelAdmin):
-    list_display = ('title', 'certificate_type', 'mode_of_delivery', 'nfq_level', 'duration', 'status')
+    list_display = ('title', 'certificate_type', 'mode_of_delivery', 'nfq_level', 'duration', 'is_published')
     list_filter = ('status', 'nfq_level', 'duration')
     search_fields = ('title', 'nfq_level', 'duration')
+
+@admin.register(Short_Course)
+class Short_CourseAdmin(admin.ModelAdmin):
+    list_display = ('title', 'mode_of_delivery', 'duration')
+    list_filter = ('price',  'duration')
+    search_fields = ('title',  'duration')
 
 @admin.register(Accredited_Program)
 class Accredited_ProgramAdmin(admin.ModelAdmin):

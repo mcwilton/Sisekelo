@@ -5,6 +5,19 @@ import mimetypes
 import os
 from django.http.response import HttpResponse
 from applications.forms import ApplicationForm
+from django.views.generic import ListView
+from .models import Learnership, Accredited_Program, Short_Course
+
+
+class HomeListView(ListView):
+    model = Learnership
+    template_name = 'index.html'
+    context_object_name = 'courses'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['top_courses'] = self.model.objects.all().order_by('?')
+        return context
 
 # def download_pdf_file(request, filename=''):
 #     if filename != '':
@@ -34,7 +47,7 @@ def index(request):
     jobs = Learnership.objects.all().count()
     # #user = User.objects.all().count()
     company_name = Learnership.objects.all()
-    paginator = Paginator(qs, 5)  # Show 5 courses per page
+    paginator = Paginator(qs, 4)  # Show 5 courses per page
     page = request.GET.get('page')
     try:
         qs = paginator.page(page)
@@ -52,6 +65,30 @@ def index(request):
     }
     return render(request, "index.html", context)
 
+
+def short_course(request):
+    short_courses = Short_Course.objects.all()
+    #image = Learnership.objects.get(image)
+    # acc_pros =Short_Course.objects.all().count()
+    # #user = User.objects.all().count()
+    company_name = Short_Course.objects.all()
+    paginate = Paginator(short_courses, 4)  # Show 5 courses per page
+    page = request.GET.get('page')
+    try:
+        short_courses = paginate.page(page)
+    except PageNotAnInteger:
+        short_courses = paginate.page(1)
+    except EmptyPage:
+        short_courses = paginate.page(paginate.num_pages)
+
+    context = {
+        'courses': short_courses,
+        # 'acc_pros': acc_pros,
+        'company_name': company_name,
+        #'image' = image
+        #'candidates': user
+    }
+    return render(request, "application/application.html", context)
 
 
 

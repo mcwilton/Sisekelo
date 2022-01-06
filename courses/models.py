@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.text import slugify
+from django.utils.timezone import now
 
 
 class Nfq(models.Model):
@@ -24,9 +26,9 @@ class Learnership(models.Model):
         ('Further Education & Training', 'Further Education & Training')
     )
     MODE_OF_DELIVERY = (
-        ('O', 'Online'),
-        ('P', 'Physical'),
-        ('H', 'Hybrid'),
+        ('Online', 'Online'),
+        ('Physical', 'Physical'),
+        ('Hybrid', 'Hybrid'),
     )
     STATUS_CHOICES = (
         ('draft', 'Draft'),
@@ -37,7 +39,7 @@ class Learnership(models.Model):
     certificate_type = models.CharField(max_length=50, choices=CERTIFICATE_TYPE, default='National Certificate')
     description = models.TextField(blank=False)
     image = models.ImageField(upload_to='uploads/learnership_images/', null=True)
-    mode_of_delivery = models.CharField(max_length=1, choices=MODE_OF_DELIVERY)
+    mode_of_delivery = models.CharField(max_length=10, choices=MODE_OF_DELIVERY)
     nfq_level = models.ForeignKey(Nfq, on_delete=models.CASCADE, related_name="nfqlevel")
     credits = models.IntegerField(null=False)
     # outcomes = models.TextField(null=False, default="")
@@ -49,8 +51,45 @@ class Learnership(models.Model):
     end_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=None)
     modules = models.TextField(null=False, default="")
     brochure = models.FileField(upload_to='uploads/learnership_brochures')
-
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
+    slug = models.SlugField(max_length=200, primary_key=True, auto_created=False, default = "")
+    is_published = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField (auto_now=True)
+
+    def __str__(self):
+        return self.title  
+
+    # def save(self, *args, **kwargs):
+    #     self.slug = slugify(self.title)
+    #     super(Course, self).save(*args, **kwargs)
+
+    
+class Short_Course(models.Model):
+    STATUS_CHOICES = (
+        ('draft', 'Draft'),
+        ('published', 'Published'),
+    )
+    MODE_OF_DELIVERY = (
+        ('Online', 'Online'),
+        ('Physical', 'Physical'),
+        ('Hybrid', 'Hybrid'),
+    )
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=False, null=True)
+    image = models.ImageField(upload_to='uploads/learnership_images/', null=True)
+    mode_of_delivery = models.CharField(max_length=30, choices=MODE_OF_DELIVERY, default='O')
+    expectations = models.TextField(blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
+    duration = models.CharField(max_length=50, null=True)
+    start_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=None)
+    end_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=None)
+    overview = models.TextField(null=False, default="")
+    accredited_brochure = models.FileField(upload_to='uploads/learnership_brochures', null=True)
+    slug = models.SlugField(max_length=200, primary_key=True, auto_created=False, default = "")
+    is_published = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField (auto_now=True)
 
     def __str__(self):
         return self.title

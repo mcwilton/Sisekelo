@@ -1,0 +1,79 @@
+<section class="site-section">
+     <div class="container">
+
+
+
+        <div class="container">
+        {% for q in query %}
+  <div class="row">
+    <div class="col">
+    {{ q.title }}
+     Price: {{ q.price }}
+    Duration {{ q.duration }}
+    </div>
+    <div class="col order-12">
+     {{ q.title }}
+     Price: {{ q.price }}
+    Duration {{ q.duration }}
+    </div>
+    <div class="col order-1">
+     {{ q.title }}
+     Price: {{ q.price }}
+    Duration {{ q.duration }}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+        <div class="mb-5">
+             {% for q in query %}
+
+          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
+            <div class="col-md-2">
+              <a href="#"><img src={{q.image}} alt="Image" class="img-fluid"></a>
+            </div>
+            <div class="col-md-4">
+             <p> {{ q.title }}</p>
+            <!--  <span class="badge badge-primary px-2 py-1 mb-3">
+                  
+              </span>-->
+              <p class="meta">Mode Of Delivery:{{ q.mode_of_delivery }}, 
+              Duration <strong> {{ q.duration }}</strong> 
+              Price: <strong>{{ q.price }}</strong></p>
+            
+              
+            </div>
+            <div class="col-md-3 text-left">
+       <span class="badge badge-primary px-2 py-1 mb-3">       <a href="{% url 'post_new' %}" >Apply Now</a> </span>
+              <span class="meta"></span>
+              <p>{{ q.brochure }}</p>
+            </div>   
+
+       </div>
+       <strong class="text-black"></strong>            
+            </div>
+ <h4></h4>
+{% endfor %}
+  <p>{{ q.description }}</p>
+        </div>
+
+<div class="col-md-3 text-md-right">
+              
+        <div class="row pagination-wrap">
+          <div class="col-md-6 text-center text-md-left">
+            <div class="custom-pagination ml-auto">
+              {% if query.has_previous %}
+              <a  href="?page={{ query.previous_page_number }}" class="prev">Previous</a>
+              {% endif %}
+              <div class="d-inline-block">
+                Page <a href="#" class="active">{{ query.number }}</a> of  {{ query.paginator.num_pages }}
+              </div>
+              {% if query.has_next %}
+              <a href="?page={{ query.next_page_number }}" class="next">Next</a>
+               {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
