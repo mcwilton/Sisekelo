@@ -17067,6 +17067,14 @@ small, .small {
 }
 
 /* Paragraphs */
+/*custom p*/
+
+.p-custom{
+	color: #fff;
+	line-height: 26px;
+	margin: 0 0 20px;
+}
+
 p {
 	color: #212529;
 	line-height: 26px;

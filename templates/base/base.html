@@ -241,7 +241,7 @@
    <p class="">{{ q.start_date}}</p>
    <p class="">{{q.nfq_level}}
     <p class="">Credits {{ q.credits}}</p>  
-     <span class="badge badge-primary px-2 py-1 mb-3" >       <a href="{% url 'post_new' %}" class="course_links" >Apply Now</a> </span>
+     <span class="badge badge-primary px-2 py-1 mb-3" >       <a href="{% url 'post_new' %}" class="course_links" >Enroll With Us</a> </span>
   </article>
 {% if forloop.counter|divisibleby:5 %}
 </div>
@@ -336,6 +336,9 @@
     <link rel="stylesheet" href="https://sisekelo.co.za/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="https://sisekelo.co.za/css/bootstrap.css">
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="https://sisekelo.co.za/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="https://sisekelo.co.za/css/magnific-popup.css">
@@ -481,15 +484,15 @@
             </div>
             <div class="container">
                     <div class="row row-pb-md">
-                            <div class="col-md-3 colorlib-widget">
+                            <div class="col-md-3 colorlib-widget ">
                                 <h4>About Company</h4>
-                                <p>Sisekelo Sustainability Institute (Sisekelo) is a dynamic 
+                                <p class="p-custom">Sisekelo Sustainability Institute (Sisekelo) is a dynamic 
                                         business consulting, training and research & development 
                                         company. </p>
                                 <p>
                                     <ul class="colorlib-social-icons">
-                                        <li><a href="https://twitter.com/Sisekelo_za"><i class="icon-twitter"></i></a></li>
-                                        <li><a href="https://www.facebook.com/sisekelo.co.za/"><i class="icon-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/Sisekelo_za"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://www.facebook.com/sisekelo.co.za/"><i class="fa fa-facebook-official"></i></a></li>
                                         <li><a href="https://www.linkedin.com/company/sisekelo/"><i class="icon-linkedin"></i></a></li>
                                         <li><a href="https://www.instagram.com/sisekelo.co.za/"><i class="icon-instagram"></i></a></li>
                                     </ul>
@@ -520,9 +523,9 @@
                             <div class="col-md-3 col-md-push-1">
                                 <h4>Contact Info</h4>
                                 <ul class="colorlib-footer-links">
-                                    <li><a href="#"><i class="icon-location4"></i></a> 6C2 Sinosteel Plaza<br> 159 Rivonia Road Morningside Ext 39, Sandton</li>
+                                    <li><a href="#"><i class="fa fa-location4"></i></a> 6C2 Sinosteel Plaza<br> 159 Rivonia Road Morningside Ext 39, Sandton</li>
                                     <li><a href="tel://011 666 6000"><i class="icon-phone"></i> 011 666 6000</a></li>
-                                    <li><a href="mailto:info@sisekelo.co.za"><i class="icon-envelope"></i> info@sisekelo.co.za</a></li>
+                                    <li><a href="mailto:info@sisekelo.co.za"><i class="fa-facebook-official "></i> info@sisekelo.co.za</a></li>
                                     
                                 </ul>
                             </div>
@@ -531,7 +534,7 @@
                     <div class="col-md-12 text-center">
                         <p>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <small class="block">Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved.  Developed  by <a href="https://consleyinnovations.co.za" target="_blank">Consley Innovations</a></small>
+                        <small class="block p-custom">Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved.  Developed  by <a href="https://sisekelo.co.za" target="_blank">Sisekelo</a></small>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
@@ -599,6 +602,7 @@
     <script src="https://sisekelo.co.za/js/jquery.countTo.js"></script>
     <!-- Main -->
     <script src="https://sisekelo.co.za/js/main.js"></script>
+
 
 
     <script type="text/javascript">
