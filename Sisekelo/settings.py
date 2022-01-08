@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'faqs',
     'applications',
     'crispy_forms',
+    'accounts',
 
 ]
 
@@ -130,3 +131,6 @@ MEDIA_URL = "/media/learnership_images/"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/' 

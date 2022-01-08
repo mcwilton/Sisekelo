@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html>
@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Sisekelo</title>
+        <title>{% block title %}Sisekelo{% endblock %}</title>
 
         <meta name="keywords" content="python, java, programming" />
         <meta name="description" content="Home of Digital Learning">
@@ -92,7 +92,7 @@
                                                     <a href="mailto:mail@domain.com"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i> info@sisekelo.co.za</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="tel:123-456-7890"><i class="fab fa-whatsapp text-4 text-color-primary" style="top: 0;"></i> 011 666 6000</a>
+                                                    <a href="tel:+27 11 666 6000"><i class="fab fa-whatsapp text-4 text-color-primary" style="top: 0;"></i> 011 666 6000</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="tel:123-456-7890"><i class="fab fa-whatsapp text-4 text-color-primary" style="top: 0;"></i> Sisekelo Online</a>
@@ -214,120 +214,13 @@
                 </div>
 
 
-
-
-
-
-
-
-
-<section id="instructors" class="p-5 bg-primary">
-  <div class="container" align="center">
-    <h2 class="text-center text-white">Trending Courses</h2>
-   <!-- <p class="lead text-center text-white mb-5">
-      You can apply for the latest courses
-    </p>-->
-    <div class="row-custom" align="center">
- {% for q in query %}
-  <article class="col-md-3-custom course-box-custom" align="center">
-      <img
-              src="https://randomuser.me/api/portraits/men/11.jpg"
-              class="rounded-square mb-3"
-              alt=""
-            />
-    <p><b>{{ q.title }}</b></p>
-     
-      <p class="">Duration: {{ q.duration }}</p>
-   <p class="">{{ q.start_date}}</p>
-   <p class="">{{q.nfq_level}}
-    <p class="">Credits {{ q.credits}}</p>  
-     <span class="badge badge-primary px-2 py-1 mb-3" >       <a href="{% url 'post_new' %}" class="course_links" >Enroll With Us</a> </span>
-  </article>
-{% if forloop.counter|divisibleby:5 %}
-</div>
-<div class="row">
-{% endif %}
-  {% endfor %}
-</div>
-   </div>
-
-
-  <div class="row pagination-wrap">
-          <div class="col-md-6 text-center text-md-left">
-            <div class="custom-pagination ml-auto">
-              {% if query.has_previous %}
-              <a  href="?page={{ query.previous_page_number }}" class="prev">Previous</a>
-              {% endif %}
-              <div class="d-inline-block">
-                Page <a href="#" class="active">{{ query.number }}</a> of  {{ query.paginator.num_pages }}
-              </div>
-              {% if query.has_next %}
-              <a href="?page={{ query.next_page_number }}" class="next">Next</a>
-               {% endif %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-<hr class="hr-custom">
-
-<section id="instructors" class="p-5 bg-primary">
-  <div class="container" align="center">
-    <h2 class="text-center text-white">Trending Specialized Programs</h2>
-   <!-- <p class="lead text-center text-white mb-5">
-      You can apply for the latest courses
-    </p>-->
-    <div class="row-custom" align="center">
- {% for q in query %}
-  <article class="col-md-3-custom course-box-custom" align="center">
-      <img
-              src="https://randomuser.me/api/portraits/men/11.jpg"
-              class="rounded-square mb-3"
-              alt=""
-            />
-    <p><b>{{ q.title }}</b></p>
-     
-      <p class="">Duration: {{ q.duration }}</p>
-   <p class="">{{ q.start_date}}</p>
-   <p class="">{{q.nfq_level}}
-    <p class="">Credits {{ q.credits}}</p>  
-     <span class="badge badge-primary px-2 py-1 mb-3" >       <a href="{% url 'post_new' %}" class="course_links" >Apply Now</a> </span>
-  </article>
-{% if forloop.counter|divisibleby:5 %}
-</div>
-<div class="row">
-{% endif %}
-  {% endfor %}
-</div>
-   </div>
-
-
-  <div class="row pagination-wrap">
-          <div class="col-md-6 text-center text-md-left">
-            <div class="custom-pagination ml-auto">
-              {% if query.has_previous %}
-              <a  href="?page={{ query.previous_page_number }}" class="prev">Previous</a>
-              {% endif %}
-              <div class="d-inline-block">
-                Page <a href="#" class="active">{{ query.number }}</a> of  {{ query.paginator.num_pages }}
-              </div>
-              {% if query.has_next %}
-              <a href="?page={{ query.next_page_number }}" class="next">Next</a>
-               {% endif %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-
-
-
-
 <!------------------------------------------------------------------------------------------->
-        
-    
+        {% block content %}
+    {% endblock %}
+<!------------------------------------------------------------------------------------------->
+
+
+
     <!-- Flaticons  -->
     <link rel="stylesheet" href="https://sisekelo.co.za/fonts/flaticon/font/flaticon.css">
 
