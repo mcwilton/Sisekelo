@@ -194,6 +194,29 @@
         <button type="submit" class="save btn btn-secondary">Save</button>
     </form>
         </div>
+
+       
+
+        {% for p in queryset %}
+  <article class="col-md-3-custom course-box-custom" align="center">
+      <img
+              src="https://randomuser.me/api/portraits/men/11.jpg"
+              class="rounded-square mb-3"
+              alt=""
+            />
+    <p><b>{{ p.title }}</b></p>
+     
+      <p class="">Duration: {{ p.duration }}</p>
+   <p class="">{{ p.start_date}}</p>
+   <p class="">{{p.nfq_level}}
+    <p class="">Credits {{ p.credits}}</p>
+     <span class="badge badge-primary px-2 py-1 mb-3" >       <a href="{% url 'post_new' %}" class="course_links" >Apply Now</a> </span>
+  </article>
+{% if forloop.counter|divisibleby:5 %}
+</div>
+<div class="row">
+{% endif %}
+  {% endfor %}
 </div>
 </section>
 

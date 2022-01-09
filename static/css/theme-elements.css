@@ -11517,6 +11517,14 @@ Credits: Codyhouse (https://codyhouse.co/gem/360-degrees-product-viewer)
 	filter: url(#shadow);
 }
 
+
+.custom-circle-course-cards{
+	height: 100px ;
+	width: 100px;
+}
+
+
+
 /* Payment CC */
 .payment-cc {
 	display: flex;

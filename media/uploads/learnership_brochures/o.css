@@ -2663,6 +2663,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 .btn-default .badge {
   color: #fff;
   background-color: #333;
+  padding-bottom: 3px;
 }
 
 .btn-primary {

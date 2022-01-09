@@ -78,6 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'fresh_sisekelo_db.sqlite3',
+        # 'NAME': BASE_DIR / 'sisekelo_images.sqlite3',
     }
 }
 

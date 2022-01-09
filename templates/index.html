@@ -3,18 +3,30 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a>
-{% endif %}
 
 
 
 
+<div class="home-intro" id="home-intro">
+                    <div class="container">
 
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <p>
+                                    The fastest way to grow your career with the leader in Tech education
+                                   <span><a href="#">View all our Learnership courses</a></span>
+                                </p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="get-started text-left text-lg-right">
+                                 <button type="button" class="btn btn-primary-subscribe" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><h4>Stay Informed</h4></button>
+                                <!--    <div class="learn-more">or <a href="index.html">learn more.</a></div>-->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 <section id="instructors" class="p-5 bg-primary">
   <div class="container" align="center">
     <h2 class="text-center text-white">Trending Courses</h2>
@@ -24,18 +36,17 @@
     <div class="row-custom" align="center">
  {% for q in query %}
   <article class="col-md-3-custom course-box-custom" align="center">
-      <img
-              src="https://randomuser.me/api/portraits/men/11.jpg"
-              class="rounded-square mb-3"
-              alt=""
-            />
+<img class="rounded-circle article-img mb-3 custom-circle-course-cards" src="{{ q.image.url }}">
     <p><b>{{ q.title }}</b></p>
-     
-      <p class="">Duration: {{ q.duration }}</p>
-   <p class="">{{ q.start_date}}</p>
-   <p class="">{{q.nfq_level}}
-    <p class="">Credits {{ q.credits}}</p>  
-     <span class="badge badge-primary px-2 py-1 mb-3" >       <a href="{% url 'post_new' %}" class="course_links" >Enroll With Us</a> </span>
+    <p class=""><b> {{ q.certificate_type }}</b></p>
+    <p class=""><b>Duration:</b> {{ q.duration }}</p>
+    <p class=""><b> Date: </b>{{q.start_date | date:"F d, Y"}}</p>
+    <p class=""><b>{{q.nfq_level}} </b>
+    <p class=""><b>Credits: </b> {{ q.credits}} | Mode: </b> {{ q.mode_of_delivery}}</p>  
+    <p class=""><b></p>  
+    
+    <span class="badge badge-primary px-2 py-1 mb-3" ><a href="{% url 'post_new' %}" class="course_links" >Enroll With Us</a> </span>
+    <span class="badge badge-primary px-2 py-1 mb-3"> <a href="{{ q.brochure.url }}" download class="course_links" >Download Brochure</a> </span>
   </article>
 {% if forloop.counter|divisibleby:5 %}
 </div>
@@ -44,7 +55,6 @@
   {% endfor %}
 </div>
    </div>
-
 
   <div class="row pagination-wrap">
           <div class="col-md-6 text-center text-md-left">
@@ -63,7 +73,7 @@
         </div>
       </div>
     </section>
-  
+
 <hr class="hr-custom">
 
 <section id="instructors" class="p-5 bg-primary">
@@ -73,29 +83,34 @@
       You can apply for the latest courses
     </p>-->
     <div class="row-custom" align="center">
- {% for q in query %}
+ {% for q in courses %}
   <article class="col-md-3-custom course-box-custom" align="center">
-      <img
-              src="https://randomuser.me/api/portraits/men/11.jpg"
-              class="rounded-square mb-3"
-              alt=""
-            />
+<img class="rounded-circle article-img mb-3 custom-circle-course-cards" src="{{ q.image.url }}">
     <p><b>{{ q.title }}</b></p>
-     
-      <p class="">Duration: {{ q.duration }}</p>
-   <p class="">{{ q.start_date}}</p>
-   <p class="">{{q.nfq_level}}
-    <p class="">Credits {{ q.credits}}</p>  
-     <span class="badge badge-primary px-2 py-1 mb-3" >       <a href="{% url 'post_new' %}" class="course_links" >Apply Now</a> </span>
+    <p class=""><b> {{ q.certificate_type }}</b></p>
+    <p class=""><b>Duration:</b> {{ q.duration }}</p>
+    <p class=""><b> Date: </b>{{q.start_date | date:"F d, Y"}}</p>
+    <p class=""><b>{{q.nfq_level}}</b>
+    <p class=""><b>Credits: </b> {{ q.credits}} | Mode: </b> {{ q.mode_of_delivery}}</p>  
+    <p class=""><b></p>  
+    
+    <span class="badge badge-primary px-2 py-1 mb-3" ><a href="{% url 'post_new' %}" class="course_links" >Enroll With Us</a> </span>
+    <span class="badge badge-primary px-2 py-1 mb-3"> <a href="{{ q.brochure.url }}" download class="course_links" >Download Brochure</a> </span>
   </article>
 {% if forloop.counter|divisibleby:5 %}
 </div>
 <div class="row">
 {% endif %}
   {% endfor %}
+{% for r in queryset %}
+
+    {{ r.title }}
+    {{ r.nfq_level }}
+
+    {% endfor %}
+
 </div>
    </div>
-
 
   <div class="row pagination-wrap">
           <div class="col-md-6 text-center text-md-left">
@@ -114,17 +129,7 @@
         </div>
       </div>
     </section>
-  
-
-
-
-
-
-
-
-
-
-
+  {{ name }}
 
 
 

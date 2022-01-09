@@ -3,10 +3,12 @@ from django.shortcuts import render
 from .models import *
 import mimetypes
 import os
+from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import HttpResponse
 from applications.forms import ApplicationForm
 from django.views.generic import ListView
 from .models import Learnership, Accredited_Program, Short_Course
+from blog.models import Carousel
 
 
 class HomeListView(ListView):
@@ -18,6 +20,7 @@ class HomeListView(ListView):
         context = super().get_context_data(**kwargs)
         context['top_courses'] = self.model.objects.all().order_by('?')
         return context
+
 
 # def download_pdf_file(request, filename=''):
 #     if filename != '':
@@ -43,7 +46,9 @@ class HomeListView(ListView):
 
 def index(request):
     qs = Learnership.objects.all()
-    #image = Learnership.objects.get(image)
+    short_courses = Accredited_Program.objects.all()
+    images = Carousel.objects.all()[:1]
+    # image = Learnership.objects.get(image)
     jobs = Learnership.objects.all().count()
     # #user = User.objects.all().count()
     company_name = Learnership.objects.all()
@@ -58,21 +63,22 @@ def index(request):
 
     context = {
         'query': qs,
+        'courses': short_courses,
         'job_qs': jobs,
         'company_name': company_name,
-        #'image' = image
-        #'candidates': user
+        'image' : images,
+        # 'candidates': user
     }
     return render(request, "index.html", context)
 
 
-def short_course(request):
-    short_courses = Short_Course.objects.all()
-    #image = Learnership.objects.get(image)
+def accredited_program(request):
+    short_courses = Accredited_Program.objects.all()
+    # image = Learnership.objects.get(image)
     # acc_pros =Short_Course.objects.all().count()
     # #user = User.objects.all().count()
-    company_name = Short_Course.objects.all()
-    paginate = Paginator(short_courses, 4)  # Show 5 courses per page
+    # company_name = Short_Course.objects.all()
+    paginate = Paginator(short_courses, 5)  # Show 5 courses per page
     page = request.GET.get('page')
     try:
         short_courses = paginate.page(page)
@@ -84,11 +90,17 @@ def short_course(request):
     context = {
         'courses': short_courses,
         # 'acc_pros': acc_pros,
-        'company_name': company_name,
-        #'image' = image
-        #'candidates': user
+        # 'company_name': company_name,
+        # 'image' = image
+        # 'candidates': user
     }
-    return render(request, "application/application.html", context)
+    return render(request, "index.html", context)
+
+
+def test():
+    queryset = images = Carousel.objects.all()
+    context = {'querysets': queryset}
+    return render(request, "base/base.html", context )
 
 
 def post_new(request):

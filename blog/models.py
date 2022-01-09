@@ -71,3 +71,7 @@ class Comment(models.Model):
     def get_comments(self):
         return Comment.objects.filter(parent=self).filter(active=True)
 
+class Carousel(models.Model):
+    title = models.CharField(max_length=100, null=False)
+    description = models.TextField(max_length=50, null=True)
+    image = models.FileField(upload_to='media/carousel/')
