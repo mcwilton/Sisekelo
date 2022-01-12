@@ -48,11 +48,9 @@ def index(request):
     qs = Learnership.objects.all()
     short_courses = Accredited_Program.objects.all()
     images = Carousel.objects.all()[:1]
-    # image = Learnership.objects.get(image)
     jobs = Learnership.objects.all().count()
-    # #user = User.objects.all().count()
     company_name = Learnership.objects.all()
-    paginator = Paginator(qs, 5)  # Show 5 courses per page
+    paginator = Paginator(qs, 5)  
     page = request.GET.get('page')
     try:
         qs = paginator.page(page)
@@ -97,10 +95,73 @@ def accredited_program(request):
     return render(request, "index.html", context)
 
 
-def test():
-    queryset = images = Carousel.objects.all()
-    context = {'querysets': queryset}
-    return render(request, "base/base.html", context )
+def test(request):
+    # queryset = images = Carousel.objects.all()
+    queryset = Accredited_Program.objects.all()
+
+    paginate = Paginator(queryset, 5)  # Show 5 courses per page
+    page = request.GET.get('page')
+    try:
+        queryset = paginate.page(page)
+    except PageNotAnInteger:
+        queryset = paginate.page(1)
+    except EmptyPage:
+        queryset = paginate.page(paginate.num_pages)
+
+    context = {'queryset': queryset}
+    return render(request, "course.html", context )
+
+
+def aprograms(request):
+    # queryset = images = Carousel.objects.all()
+    queryset = Accredited_Program.objects.all()
+
+    paginate = Paginator(queryset, 5)  # Show 5 courses per page
+    page = request.GET.get('page')
+    try:
+        queryset = paginate.page(page)
+    except PageNotAnInteger:
+        queryset = paginate.page(1)
+    except EmptyPage:
+        queryset = paginate.page(paginate.num_pages)
+
+    context = {'queryset': queryset}
+    return render(request, "courses/aprograms.html", context )
+
+def corporate(request):
+    # queryset = images = Carousel.objects.all()
+    queryset = Accredited_Program.objects.all()
+
+    paginate = Paginator(queryset, 5)  # Show 5 courses per page
+    page = request.GET.get('page')
+    try:
+        queryset = paginate.page(page)
+    except PageNotAnInteger:
+        queryset = paginate.page(1)
+    except EmptyPage:
+        queryset = paginate.page(paginate.num_pages)
+
+    context = {'queryset': queryset}
+    return render(request, "courses/corporate.html", context )
+
+
+def learnerships(request):
+    # queryset = images = Carousel.objects.all()
+    queryset = Accredited_Program.objects.all()
+
+    paginate = Paginator(queryset, 5)  # Show 5 courses per page
+    page = request.GET.get('page')
+    try:
+        queryset = paginate.page(page)
+    except PageNotAnInteger:
+        queryset = paginate.page(1)
+    except EmptyPage:
+        queryset = paginate.page(paginate.num_pages)
+
+    context = {'queryset': queryset}
+    return render(request, "courses/learnerships.html", context )
+
+
 
 
 def post_new(request):

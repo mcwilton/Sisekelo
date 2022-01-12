@@ -1336,6 +1336,20 @@ Theme Version:	8.3.0
 	margin-left: 8px;
 }
 
+.p-custom-colored{
+	color: black;
+
+}
+
+.course-box-custom-colored{
+
+	background-color: #e6e6e6;
+	border-color: orangered;
+	padding-top: 3%;
+	
+	margin-left: 8px;
+}
+
 .hr-custom {
     margin-top: 1px;
     margin-bottom: 1px;

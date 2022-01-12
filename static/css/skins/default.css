@@ -277,6 +277,17 @@ html .bg-primary {
 
 }
 
+
+.bg-with-image{
+	background-image: url(http://127.0.0.1:8000/bg-corporate-14-1.jpg);
+	background-repeat: no-repeat;
+	width: 200px;
+	height: 800px;
+}
+
+
+}
+
 html .bg-color-hover-primary:hover,
 html .bg-hover-primary:hover {
 	background-color: #0088CC !important;

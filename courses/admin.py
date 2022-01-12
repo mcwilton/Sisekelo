@@ -32,9 +32,10 @@ class NfqAdmin(admin.ModelAdmin):
 
 @admin.register(Learnership)
 class LearnershipAdmin(admin.ModelAdmin):
-    list_display = ('title', 'certificate_type', 'mode_of_delivery', 'nfq_level', 'duration', 'is_published')
+    list_display = ('title', 'certificate_type', 'mode_of_delivery', 'duration', 'price', 'start_date')
     list_filter = ('status', 'nfq_level', 'duration')
     search_fields = ('title', 'nfq_level', 'duration')
+    list_editable = ('start_date', 'duration', 'price', 'mode_of_delivery')
 
 @admin.register(Short_Course)
 class Short_CourseAdmin(admin.ModelAdmin):

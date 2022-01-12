@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Sisekelo</title>
+        <title>{% block title %}Sisekelo{% endblock %}</title>
 
         <meta name="keywords" content="python, java, programming" />
         <meta name="description" content="Home of Digital Learning">
@@ -22,7 +22,13 @@
 
         <!-- Web Fonts  -->
         <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css' %}">
-
+        <style type="text/css">
+            
+            ul.list li{
+          width: auto;
+          float: left;
+        }
+        </style>
         <!-- Vendor CSS -->
         <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'vendor/fontawesome-free/css/all.min.css' %}">
@@ -40,10 +46,12 @@
         <link rel="stylesheet" href="{% static 'css/theme-elements.css' %}">
         <link rel="stylesheet" href="{% static 'css/theme-blog.css' %}">
         <link rel="stylesheet" href="{% static 'css/theme-shop.css' %}">
-
+        <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+        <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        
         <!-- Current Page CSS -->
         <link rel="stylesheet" href="{% static 'vendor/circle-flip-slideshow/css/component.css' %}">
-
         <!-- Skin CSS -->
         <link id="skincss" rel="stylesheet" href="{% static 'css/skins/default.css' %}">
 
@@ -53,7 +61,7 @@
         <!-- Head Libs -->
         <script src="{% static 'vendor/modernizr/modernizr.min.js' %}"></script>
 
-    </head>
+        </head>
     <body>
 
         <div class="body">
@@ -84,11 +92,21 @@
                                                     <a href="mailto:mail@domain.com"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i> info@sisekelo.co.za</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="tel:123-456-7890"><i class="fab fa-whatsapp text-4 text-color-primary" style="top: 0;"></i> 123-456-7890</a>
+                                                    <a href="tel:+27 11 666 6000"><i class="fab fa-whatsapp text-4 text-color-primary" style="top: 0;"></i> 010 226 9885</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="tel:123-456-7890"><i class="fab fa-whatsapp text-4 text-color-primary" style="top: 0;"></i> Sisekelo Online</a>
                                                 </li>
+                                                
+                                                <li class="nav-item">
+                                                    {% if user.is_authenticated %}
+                                                    <a href="tel:123-456-7890"><i class="fa fa-user text-4 text-color-primary" style="top: 0;"></i> Hi {{ user.username }}!</a>
+                                                     <a href="{% url 'logout' %}">Log Out</a>
+                                                {% else %}
+                                                 
+                                                  <a href="{% url 'login' %}">Log In</a>
+                                                {% endif %}
+                                                        </li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -104,7 +122,6 @@
                                         <a href="index.html">
                                             <img alt="Sisekelo" width="100" height="48" data-sticky-width="82" data-sticky-height="40" src="{% static 'logo.png' %}">
 
-
                                         </a>
                                     </div>
                                 </div>
@@ -116,15 +133,19 @@
                                             <nav class="collapse">
                                                 <ul class="nav nav-pills" id="mainNav">
                                                     <li class="dropdown">
-                                                        <a class="dropdown-item dropdown-toggle" href="index.html">
+                                                        <a class="dropdown-item dropdown-toggle" href="#">
                                                             Home
                                                         </a>
-                                                            <li class="dropdown-submenu">
-                                                                <a class="dropdown-item" href="#">One Page</a>
-                                                                <ul class="dropdown-menu">
-                                                                    <li><a class="dropdown-item" href="index-one-page.html">One Page Original</a></li>
-                                                                </ul>
-                                                            </li>
+                                                        <li >
+                                                        <a href="#">Academic Programmes</a>
+                                                           
+                                                        <li><a href="#">Learnerships</a></li>
+                                                       
+                                                        <li><a href="#">Corporate Programmes</a></li>
+                                                       
+                                                        <li><a href="#">Online Courses</a></li>
+                                                            </ul>
+                                                        </li>
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -158,31 +179,6 @@
                 </div>
             </header>
 
-           
-
-
-
-
-                <div class="home-intro" id="home-intro">
-                    <div class="container">
-
-                        <div class="row align-items-center">
-                            <div class="col-lg-8">
-                                <p>
-                                    The fastest way to grow your CAREER with the leader in <span class="highlighted-word">Tech education</span>
-                                   <span><a href="https://www.sisekelo.co.za/short/courses/Learnership">View all our Learnership courses</a></span>
-                                </p>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="get-started text-left text-lg-right">
-                                 <button type="button" class="btn btn-primary-subscribe" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><h4>Stay Informed</h4></button>
-                                <!--    <div class="learn-more">or <a href="index.html">learn more.</a></div>-->
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
 
 <section>
 	<div class="container">

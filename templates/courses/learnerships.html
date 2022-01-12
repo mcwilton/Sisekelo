@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+    <section class="pt-0">
+        
+    <div class="container">
+
+        <!-- Filter bar START -->
+        <form class="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative">
+        <div class="row-custom" align="center">
+ {% for q in queryset %}
+  <article class="col-md-3-custom course-box-custom-colored p-custom-colored" align="center">
+<img class="rounded-circle article-img mb-3 custom-circle-course-cards" src="{{ q.image.url }}">
+    <p class="p-custom-colored"><b>{{ q.title }}</b></p>
+    <p class="p-custom-colored"><b> {{ q.certificate_type }}</b></p>
+    <p class=""><b>Duration:</b> {{ q.duration }}</p>
+    <p class=""><b> Date: </b>{{q.start_date | date:"F d, Y"}}</p>
+    <p class=""><b>{{q.nfq_level}} </b>
+    <p class=""><b>Credits: </b> {{ q.credits}} | Mode: </b> {{ q.mode_of_delivery}}</p>  
+    <p class=""><b></p>  
+    
+    <span class="badge badge-primary px-2 py-1 mb-3" ><a href="{% url 'post_new' %}" class="course_links" >Enroll With Us</a> </span>
+    <span class="badge badge-primary px-2 py-1 mb-3"> <a href="{{ q.brochure.url }}" download class="course_links" >Download Brochure</a> </span>
+  </article>
+{% if forloop.counter|divisibleby:5 %}
+</div>
+<div class="row">
+{% endif %}
+  {% endfor %}
+</div>
+
+    </div>
+
+ 
+<!-- Back to top -->
+{% endblock %}

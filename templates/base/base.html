@@ -75,10 +75,10 @@
                                         <nav class="header-nav-top">
                                             <ul class="nav nav-pills text-uppercase text-2">
                                                 <li class="nav-item nav-item-anim-icon d-none d-md-block">
-                                                    <a class="nav-link pl-0" href="about-us.html"><i class="fas fa-angle-right"></i> About Us</a>
+                                                    <a class="nav-link pl-0" href="#"><i class="fas fa-angle-right"></i> About Us</a>
                                                 </li>
                                                 <li class="nav-item nav-item-anim-icon d-none d-md-block">
-                                                    <a class="nav-link" href="contact-us.html"><i class="fas fa-angle-right"></i> Contact Us</a>
+                                                    <a class="nav-link" href="{% url 'contact:contact' %}"><i class="fas fa-angle-right"></i> Contact Us</a>
                                                 </li>
                                             </ul>
                                         </nav>
@@ -89,10 +89,10 @@
                                         <nav class="header-nav-top">
                                             <ul class="nav nav-pills">
                                                 <li class="nav-item">
-                                                    <a href="mailto:mail@domain.com"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i> info@sisekelo.co.za</a>
+                                                    <a href="mailto:info@sisekelo.co.za"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i> info@sisekelo.co.za</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="tel:+27 11 666 6000"><i class="fab fa-whatsapp text-4 text-color-primary" style="top: 0;"></i> 0102269885</a>
+                                                    <a href="tel:+27 11 666 6000"><i class="fab fa-whatsapp text-4 text-color-primary" style="top: 0;"></i> 010 226 9885</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="tel:123-456-7890"><i class="fab fa-whatsapp text-4 text-color-primary" style="top: 0;"></i> Sisekelo Online</a>
@@ -104,7 +104,9 @@
                                                      <a href="{% url 'logout' %}">Log Out</a>
                                                 {% else %}
                                                  
-                                                  <a href="{% url 'login' %}">Log In</a>
+                                                  <a href="{% url 'login' %}">Log In</a> | 
+                                                  <a href="{% url 'accounts:register' %}">Register</a> 
+                                                 
                                                 {% endif %}
                                                         </li>
                                             </ul>
@@ -126,35 +128,35 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="header-column justify-content-end">
-                                <div class="header-row">
-                                    <div class="header-nav header-nav-links order-2 order-lg-1">
-                                        <div class="header-nav-main header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
-                                            <nav class="collapse">
-                                                <ul class="nav nav-pills" id="mainNav">
-                                                    <li class="dropdown">
-                                                        <a class="dropdown-item dropdown-toggle" href="#">
-                                                            Home
-                                                        </a>
-                                                        <li >
-                                                        <a href="#">Academic Programmes</a>
-                                                           
-                                                        <li><a href="#">Learnership</a></li>
-                                                       
-                                                        <li><a href="#">Corporate Programmes</a></li>
-                                                       
-                                                        <li><a href="#">Online Courses</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                        <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
-                                            <i class="fas fa-bars"></i>
-                                        </button>
-                                    </div>
+<div class="header-column justify-content-end">
+<div class="header-row">
+<div class="header-nav header-nav-links order-2 order-lg-1">
+<div class="header-nav-main header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+<nav class="collapse">
+    <ul class="nav nav-pills" id="mainNav">
+        <li class="dropdown">
+            <a class="dropdown-item dropdown-toggle" href="/">
+                Home
+            </a>
+            <li >
+            <a href="{% url 'courses:aprograms' %}">Academic Programmes</a>
+               
+            <li><a href="{% url 'courses:learnerships' %}">Learnerships</a></li>
+           
+            <li><a href="{% url 'courses:corporate' %}">Corporate Programmes</a></li>
+           
+            <li><a href="#">Online Courses</a></li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+</div>
+<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+<i class="fas fa-bars"></i>
+</button>
+</div>
                                     <div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
                                         <div class="header-nav-feature header-nav-features-search d-inline-flex">
                                             <a href="#" class="header-nav-features-toggle text-decoration-none" data-focus="headerSearch"><i class="fas fa-search header-nav-top-icon"></i></a>
@@ -181,7 +183,7 @@
 
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      {% for p in image %}
+    {% for p in image %}
         {% if forloop.counter|divisibleby:1 %}
   <div class="carousel-inner">
     <div class="carousel-item active">

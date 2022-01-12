@@ -2,6 +2,9 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Carousel
 
+
+
+
 def post_list(request):
     posts = Post.published.all()
     return render(request,'post_list.html',{'posts':posts})
@@ -39,3 +42,5 @@ def index(request):
         # 'candidates': user
     }
     return render(request, "base/base.html", {'images' : images,})
+
+
