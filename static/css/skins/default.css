@@ -277,6 +277,13 @@ html .bg-primary {
 
 }
 
+html .bg-primary-edit {
+	background-color: whitesmoke;
+	padding-bottom: 30px;
+
+}
+
+
 
 .bg-with-image{
 	background-image: url(http://127.0.0.1:8000/bg-corporate-14-1.jpg);
