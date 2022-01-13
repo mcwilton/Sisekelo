@@ -23,7 +23,7 @@
 
                     </div>
                 </div>
-<section id="instructors" class="p-5 bg-primary">
+<section id="instructors" class="p-5 bg-primary-edit">
   <div class="container" align="center">
     <h2 class="text-center text-white">Trending Courses</h2>
    <!-- <p class="lead text-center text-white mb-5">
@@ -31,7 +31,7 @@
     </p>-->
 <div class="row-custom" align="center">
  {% for q in query %}
-  <article class="col-md-3-custom course-box-custom" align="center">
+  <article class="col-md-3-custom course-box-custom-colored" align="center">
 <img class="rounded-circle article-img mb-3 custom-circle-course-cards" src="{{ q.image.url }}">
     <p><b>{{ q.title }}</b></p>
     <p class=""><b> {{ q.certificate_type }}</b></p>
@@ -52,7 +52,7 @@
 </div>
    </div>
 
-  <div class="row pagination-wrap">
+  <!--<div class="row pagination-wrap">
           <div class="col-md-6 text-center text-md-left">
             <div class="custom-pagination ml-auto">
               {% if query.has_previous %}
@@ -67,12 +67,12 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
     </section>
 
 <hr class="hr-custom">
 
-<section id="instructors" class="p-5 bg-primary">
+<section id="instructors" class="p-5 bg-primary-edit">
   <div class="container" align="center">
     <h2 class="text-center text-white">Trending Specialized Programs</h2>
    <!-- <p class="lead text-center text-white mb-5">
@@ -80,7 +80,7 @@
     </p>-->
     <div class="row-custom" align="center">
  {% for q in courses %}
-  <article class="col-md-3-custom course-box-custom" align="center">
+  <article class="col-md-3-custom course-box-custom-colored" align="center">
 <img class="rounded-circle article-img mb-3 custom-circle-course-cards" src="{{ q.image.url }}">
     <p><b>{{ q.title }}</b></p>
     <p class=""><b> {{ q.certificate_type }}</b></p>
@@ -108,7 +108,7 @@
 </div>
    </div>
 
-  <div class="row pagination-wrap">
+ <!-- <div class="row pagination-wrap">
           <div class="col-md-6 text-center text-md-left">
             <div class="custom-pagination ml-auto">
               {% if query.has_previous %}
@@ -123,7 +123,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
     </section>
   {{ name }}
 
