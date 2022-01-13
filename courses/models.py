@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.utils.timezone import now
+from django.urls import reverse
 
 
 class Nfq(models.Model):
@@ -65,7 +66,10 @@ class Accredited_Program(models.Model):
     updated_at = models.DateTimeField (auto_now=True)
 
     def __str__(self):
-        return self.title  
+        return self.title
+
+    # def get_absolute_url(self):
+    #     return reverse("courses:course_detail", kwargs={"slug": self.slug})
 
 
 class Specialized_Course(models.Model):

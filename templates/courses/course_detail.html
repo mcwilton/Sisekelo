@@ -1,0 +1,336 @@
+
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html style="font-family: Inter;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Sikelelo</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=78fc49e7d767d05ab2402bbffd54bf27">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css?h=18313f04cea0e078412a028c5361bd4e">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css?h=18313f04cea0e078412a028c5361bd4e">
+    <link rel="stylesheet" href="assets/css/styles.min.css?h=9032f2dedde532e76e6f68d52a6c5dba">
+
+    <style>
+        .jumbotronus {
+            background: url("https://www.sisekelo.co.za/images/shortcourses/report-writting4.jpg") center center / cover no-repeat;
+        }
+</style>
+</head>
+
+<body>
+    <div class="jumbotronus"  >
+        <h1 class="text-center" style="font-size: 50px;color: rgb(244,244,244);padding-top: 10px;font-family: Inter;">{{course.title|capfirst}}</h1>
+        <p class="text-center" style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;font-family: Inter;">"Embrace learning as a life-long process and it will become your greatest competitive advantage, which in the long run will generate your greatest returns, assets and happiness."<br></p>
+        <p class="text-center" style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;margin-top: -20px;">- MoneyGuy</p>
+    </div>
+    <div>
+        <div class="container">
+            <h1 class="text-left" style="margin-top: 0px;margin-bottom: 0px;padding-top: 20px;font-family: Inter;">Invest in your future self</h1>
+            <hr style="border-width: 2px;border-color: orange;margin-top: 25px;border-bottom-style: solid;border-top-style: solid;height: auto;border-bottom-width: 0;flex-grow: 2;box-sizing: border-box;display: block;">
+        </div>
+        <div class="container">
+            <p style="line-height: 1.7rem;font-family: Montserrat;padding-top: 8px;">Choosing the right business degree from a great business school that will offer a network of greatness can give you a great ROI, and enable you to enjoy unfettered options in your future career. The Regenesys BBA offers the ideal foundation
+                to start investing in your future career in business administration. Get the foundation of your career right with our high-quality business education and you will build a solid and successful career out of it. Register for this qualification
+                which will provide you with an excellent grounding for an entrepreneurial career or corporate management position<br></p>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12"><img src="{{ course.image.url }}" style="width: 358px;"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col"><a class="btn peach-gradient btn-rounded btn-lg waves-effect waves-light">Link</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+
+            <!-- Accordion wrapper -->
+            <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+
+              <!-- Accordion card -->
+              <div class="card grey lighten-2" style="padding-left: 10px; margin-bottom:6px; margin-right:-50px;  border-radius:0.5rem">
+
+                <!-- Card header -->
+                <div class="card-header" role="tab" id="headingTwo1">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+                    <h5 class="mb-0 text-dark"> <i class="fas fa-angle-down rotate-icon"></i>
+                      Why Study Regenesys BBA?
+                    </h5>
+                  </a>
+                </div>
+
+                <!-- Card body -->
+                <div id="collapseTwo1" class="collapse " role="tabpanel" aria-labelledby="headingTwo1" data-parent="#accordionEx1">
+                  <div class="card-body text-dark">
+                  {{ course.mode_of_delivery}}</div>
+                </div>
+
+              </div>
+
+
+
+
+              <!-- Accordion card -->
+
+              <!-- Accordion card -->
+              <div class="card grey lighten-2" style="padding: 2px; margin-bottom:6px; margin-right:-50px; border-radius:0.5rem">
+
+                <!-- Card header -->
+
+
+                <div class="card-header " role="tab" id="headingTwo2">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo21" aria-expanded="false" aria-controls="collapseTwo21">
+                    <h5 class="mb-0 text-dark">
+                      Who is it for? <i class="fas fa-angle-down rotate-icon"></i>
+                    </h5>
+                  </a>
+                </div>
+
+                <!-- Card body -->
+                <div id="collapseTwo21" class="collapse " role="tabpanel" aria-labelledby="headingTwo21" data-parent="#accordionEx1">
+                  <div class="card-body text-dark">
+    <p class=""><b>{{course.nfq_level}}</b>
+    <p class=""><b>Credits: </b> {{ course.credits}} 
+                  </div>
+                </div>
+
+              </div>
+              <!-- Accordion card -->
+
+              <!-- Accordion card -->
+              <div class="card grey lighten-2" style="padding: 2px; margin-bottom:6px;margin-right:-50px; border-radius:0.5rem">
+
+                <!-- Card header -->
+                <div class="card-header " role="tab" id="headingThree31">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31" aria-expanded="false" aria-controls="collapseThree31">
+                    <h5 class="mb-0 text-dark">
+                      Career Prospects <i class="fas fa-angle-down rotate-icon"></i>
+                    </h5>
+                  </a>
+                </div>
+
+                <!-- Card body -->
+                <div id="collapseThree31" class="collapse " role="tabpanel" aria-labelledby="headingThree31" data-parent="#accordionEx1">
+                  <div class="card-body text-dark">
+        A BBA is a powerful introduction to the world of business and management. It will provide you with an overall view of how a business works. You will gain insights that you can apply immediately. You will be more confident, and you will make a better contribution.
+
+A Regenesys BBA qualification will put you at the front of the queue. Your employer or future employer will know that you are committed to making a contribution. Career opportunities and rewards will open up for you.
+
+Your BBA will give you a vast amount of knowledge and information. You will also demonstrate that you are able to work extremely hard and persevere. These qualities are particularly sought after by top organisations. Your BBA will put you ahead of the rest.
+
+Recruitment agencies love Regenesys graduates. They know their worth and they are quickly able to make favourable placements.
+
+The Regenesys BBA will set you up for that first big job, that next big promotion, or open up an exciting new position with another organisation. Or you may decide to start out on your own enhances your business and managerial skills that is one of the most important requirements for a business management graduate. While studying BBA, students can develop a managerial perspective along with entrepreneurial skills on completing the degree.
+
+Whatever your purpose in life, the Regenesys BBA will always be with you.
+                  </div>
+                </div>
+
+              </div>
+              <!-- Accordion card -->
+
+            </div>
+            <!-- Accordion wrapper -->
+
+         </div>
+                    </div>
+                    <div class="row" style="font-family: Roboto;font-size: 12px;margin-top: 12px;">
+                        <div class="col-md-12">
+                            <p>DURATION :&nbsp;<strong>3 YEARS</strong><br></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>ID:&nbsp;<strong>84027 – BACHELOR OF BUSINESS ADMINISTRATION (BBA)</strong><br></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>CREDIT:&nbsp;<strong>The BBA is an NQF level 7 qualification, with 360 credits.</strong><br></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 45px;">
+        <h1 class="text-left" style="margin-top: 0px;margin-bottom: 0px;padding-top: 20px;font-family: Inter;">Enquire Now</h1>
+        <hr style="border-width: 2px;border-color: orange;margin-top: 25px;border-bottom-style: solid;border-top-style: solid;height: auto;border-bottom-width: 0;flex-grow: 2;box-sizing: border-box;display: block;">
+        <div class="container">
+            <div class="intro"></div><div class="container c1">
+
+
+    <div class="container">
+
+
+        <div class="c2">
+
+
+            <div></div>
+
+
+            </div>
+
+</div>
+
+<div>
+
+    <div class="c3">
+
+
+                <div >
+
+                        <form method="post" enctype="multipart/form-data"  action="" novalidate=""> 
+
+ <input type="hidden" value="">
+
+                        <div>
+
+                            <div>
+
+                            <fieldset><legend>Name
+
+                                <span>
+
+                                    <span>(Required)</span>
+
+                                </span>
+
+                            </legend>
+
+                                <div>
+                            
+                            <span>
+                              <label for="">First</label>
+        <input type="text" value="" aria-required="true">
+                                                  
+                                                </span>
+                            
+                            <span><label for="input_1_1_6">Last</label>
+                                                    <input type="text" name="input_1.6" id="input_1_1_6" value="" aria-required="true">
+
+                                                    
+                                                </span>
+                            
+                        </div>
+
+                    </fieldset>
+
+                    <div id="field_1_2">
+
+                        <label for="input_1_2">Contact number
+
+                            <span>
+
+                                <span>(Required)</span>
+
+                            </span></label>
+
+                            <div>
+
+                                <input type="text" name="input_1.6" id="input_1_1_6" value="" aria-required="true"></div>
+
+                            </div>
+
+                            <div id="field_1_3" class="">
+
+                                <label for="input_1_3">Email
+
+                                    <span>
+
+                                        <span>(Required)</span>
+
+                                    </span></label>
+
+                                    <div>
+
+                            <input name="input_3" id="input_1_3" type="email" value="" class="large" aria-required="true" aria-invalid="false">
+
+
+                        </div>
+
+                    </div>
+                    <div id="field_1_5" ><label for="input_1_5">List any previous courses or degrees you have completed<span ><span>(Required)</span>
+
+                    </span>
+
+                </label>
+
+                <div><input name="input_5" id="input_1_5" type="text" value="" class="large" aria-required="true" aria-invalid="false"> 
+
+                </div></div>
+
+                <div id="field_1_7">
+
+                    <label for="input_1_7">Programme of lnterest<span>
+
+                    <span>(Required)</span>
+
+                </span></label>
+
+                <div>
+
+                    <div>
+
+                    <select class="selected" name="input_7" id="input_1_7"  aria-required="true" aria-invalid="false">
+
+                        <option value="Doctorate of Business Management">Doctorate of Business Management</option>
+                        <option value="Master of Business Administration">Master of Business Administration</option>
+                        <option value="Postgraduate Diploma in Business Management">Postgraduate Diploma in Business Management</option>
+                        <option value="Master of Public Management">Master of Public Management</option>
+                        <option value="Postgraduate Diploma in Public Management">Postgraduate Diploma in Public Management</option>
+                        <option value="Bachelor of Business Administration">Bachelor of Business Administration</option>
+                        <option value="Bachelor of Business Administration (Retail)">Bachelor of Business Administration (Retail)</option>
+                        <option value="Bachelor of Business Administration (Banking)">Bachelor of Business Administration (Banking)</option>
+                        <option value="Higher Certificate in Business Management">Higher Certificate in Business Management</option>
+                        <option value="Higher Certificate in Business Management: Retail">Higher Certificate in Business Management: Retail</option>
+                        <option value="Higher Certificate in Business Management: Credit Banking">Higher Certificate in Business Management: Credit Banking</option>
+                        <option value="Master of Public Management">Master of Public Management</option>
+                        <option value="Higher Certificate in Public Management">Higher Certificate in Public Management</option>
+                        <option value="National Diploma in Public Administration">National Diploma in Public Administration</option>
+                        <option value="Bachelor of Accounting Science">Bachelor of Accounting Science</option>
+
+                    </select>
+
+                    <div class="arrow"> 
+
+                        <i class="glyphicon glyphicon-arrow-down">  </i>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+     
+                        </form>
+
+
+                        </div></div></div></div></div>
+    </div>
+    <script src="assets/js/jquery.min.js?h=83e266cb1712b47c265f77a8f9e18451"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js?h=e46528792882c54882f660b60936a0fc"></script>
+    <script src="assets/js/script.min.js?h=cff910a810e90956e2f5b79da0aaa218"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+{% endblock %}

@@ -25,15 +25,17 @@
                 </div>
 <section id="instructors" class="p-5 bg-primary-edit">
   <div class="container" align="center">
-    <h2 class="text-center text-white">Trending Courses</h2>
+    <h2 class="text-center ">Upcoming Courses</h2>
    <!-- <p class="lead text-center text-white mb-5">
       You can apply for the latest courses
     </p>-->
 <div class="row-custom" align="center">
  {% for q in query %}
   <article class="col-md-3-custom course-box-custom-colored" align="center">
-<img class="rounded-circle article-img mb-3 custom-circle-course-cards" src="{{ q.image.url }}">
-    <p><b>{{ q.title }}</b></p>
+<a href="{% url 'courses:learnership_detail' q.slug %}">
+<img class="rounded-circle article-img mb-3 custom-circle-course-cards" src="{{ q.image.url }}"></a>
+    
+    <p><b><a href="{% url 'courses:learnership_detail' q.slug %}">{{q.title|capfirst}}</a></b></p>
     <p class=""><b> {{ q.certificate_type }}</b></p>
     <p class=""><b>Duration:</b> {{ q.duration }}</p>
     <p class=""><b> Date: </b>{{q.start_date | date:"F d, Y"}}</p>
@@ -74,15 +76,15 @@
 
 <section id="instructors" class="p-5 bg-primary-edit">
   <div class="container" align="center">
-    <h2 class="text-center text-white">Trending Specialized Programs</h2>
+    <h2 class="text-center ">Trending Specialized Programs</h2>
    <!-- <p class="lead text-center text-white mb-5">
       You can apply for the latest courses
     </p>-->
     <div class="row-custom" align="center">
  {% for q in courses %}
   <article class="col-md-3-custom course-box-custom-colored" align="center">
-<img class="rounded-circle article-img mb-3 custom-circle-course-cards" src="{{ q.image.url }}">
-    <p><b>{{ q.title }}</b></p>
+<a href="{% url 'courses:course_detail' q.slug %}"><img class="rounded-circle article-img mb-3 custom-circle-course-cards" src="{{ q.image.url }}"></a>
+<a href="{% url 'courses:course_detail' q.slug %}"><h3 class="">{{q.title|capfirst}}</h3></a></a>
     <p class=""><b> {{ q.certificate_type }}</b></p>
     <p class=""><b>Duration:</b> {{ q.duration }}</p>
     <p class=""><b> Date: </b>{{q.start_date | date:"F d, Y"}}</p>

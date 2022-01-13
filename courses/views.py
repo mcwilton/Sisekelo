@@ -1,5 +1,6 @@
+import secrets
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import *
 import mimetypes
 import os
@@ -9,6 +10,12 @@ from applications.forms import ApplicationForm
 from django.views.generic import ListView
 from .models import Learnership, Accredited_Program, Short_Course
 from blog.models import Carousel
+from rest_framework import viewsets
+from rest_framework import permissions
+from courses.serializers import CourseSerializer
+from django.shortcuts import render, redirect
+from django.views.generic import TemplateView,ListView,DetailView,View
+from django.urls import reverse
 
 
 class HomeListView(ListView):
@@ -20,28 +27,6 @@ class HomeListView(ListView):
         context = super().get_context_data(**kwargs)
         context['top_courses'] = self.model.objects.all().order_by('?')
         return context
-
-
-# def download_pdf_file(request, filename=''):
-#     if filename != '':
-#         # Define Django project base directory
-#         BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#         # Define the full file path
-#         filepath = BASE_DIR + '/uploads/learnership_brochures/' + filename
-#         # Open the file for reading content
-#         # filename = 'Sisekelo-Brouchure-End-User.pdf'
-#         path = open(filepath, 'rb')
-#         # Set the mime type
-#         mime_type, _ = mimetypes.guess_type(filepath)
-#         # Set the return value of the HttpResponse
-#         response = HttpResponse(path, content_type=mime_type)
-#         # Set the HTTP header for sending to browser
-#         response['Content-Disposition'] = "attachment; filename=%s" % filename
-#         # Return the response value
-#         return response
-#     else:
-#         # Load the template
-#         return render(request, 'index.html')
 
 
 def index(request):
@@ -87,10 +72,7 @@ def accredited_program(request):
 
     context = {
         'courses': short_courses,
-        # 'acc_pros': acc_pros,
-        # 'company_name': company_name,
-        # 'image' = image
-        # 'candidates': user
+
     }
     return render(request, "index.html", context)
 
@@ -162,8 +144,24 @@ def learnerships(request):
     return render(request, "courses/learnerships.html", context )
 
 
+class CourseViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Accredited_Program.objects.all().order_by('title')
+    serializer_class = CourseSerializer
+    # permission_classes = [permissions.IsAuthenticated]
 
+class CourseDetailView(View):
+    def get(self, request, slug, *args, **kwargs):
+        course = get_object_or_404(Accredited_Program, slug=slug)
+        # lesson = get_object_or_404(Lesson, slug=lesson_slug)
+        context = {'course': course}
+        return render(request, "courses/course_detail.html", context)
 
-def post_new(request):
-    form = ApplicationForm()
-    return render(request, 'index.html', {'form': form})
+class LearnershipDetailView(View):
+    def get(self, request, slug, *args, **kwargs):
+        learnership = get_object_or_404(Learnership, slug=slug)
+        # lesson = get_object_or_404(Lesson, slug=lesson_slug)
+        context = {'learnership':learnership}
+        return render(request, "courses/course_detail.html", context)
