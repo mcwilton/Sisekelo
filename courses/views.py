@@ -35,7 +35,7 @@ def index(request):
     images = Carousel.objects.all()[:1]
     jobs = Learnership.objects.all().count()
     company_name = Learnership.objects.all()
-    paginator = Paginator(qs, 5)  
+    paginator = Paginator(qs, 4)  
     page = request.GET.get('page')
     try:
         qs = paginator.page(page)
@@ -155,13 +155,11 @@ class CourseViewSet(viewsets.ModelViewSet):
 class CourseDetailView(View):
     def get(self, request, slug, *args, **kwargs):
         course = get_object_or_404(Accredited_Program, slug=slug)
-        # lesson = get_object_or_404(Lesson, slug=lesson_slug)
         context = {'course': course}
         return render(request, "courses/course_detail.html", context)
 
 class LearnershipDetailView(View):
     def get(self, request, slug, *args, **kwargs):
         learnership = get_object_or_404(Learnership, slug=slug)
-        # lesson = get_object_or_404(Lesson, slug=lesson_slug)
         context = {'learnership':learnership}
-        return render(request, "courses/course_detail.html", context)
+        return render(request, "courses/learnership_detail.html", context)

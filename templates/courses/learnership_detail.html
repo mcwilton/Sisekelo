@@ -23,17 +23,17 @@
 
 <body>
     <div class="jumbotronus"  >
-        <h1 class="text-center" style="font-size: 50px;color: rgb(244,244,244);padding-top: 10px;font-family: Inter;">{{course.title|capfirst}}</h1>
-        <p class="text-center" style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;font-family: Inter;">{{course.description| truncatewords:20}}"<br></p>
+        <h1 class="text-center" style="font-size: 50px;color: rgb(244,244,244);padding-top: 10px;font-family: Inter;">{{learnership.title|capfirst}}</h1>
+        <p class="text-center" style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;font-family: Inter;">{{learnership.description| truncatewords:20}}"<br></p>
         <p class="text-center" style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;margin-top: -20px;">- Sisekelo</p>
     </div>
     <div>
         <div class="container">
-            <h1 class="text-left" style="margin-top: 0px;margin-bottom: 0px;padding-top: 20px;font-family: Inter;">{{course.program_type}} | {{course.certificate_type}}</h1>
+            <h1 class="text-left" style="margin-top: 0px;margin-bottom: 0px;padding-top: 20px;font-family: Inter;">{{learnership.program_type}} | {{learnership.certificate_type}}</h1>
             <hr style="border-width: 2px;border-color: orange;margin-top: 25px;border-bottom-style: solid;border-top-style: solid;height: auto;border-bottom-width: 0;flex-grow: 2;box-sizing: border-box;display: block;">
         </div>
         <div class="container">
-            <p style="line-height: 1.7rem;font-family: Montserrat; padding-top: 8px;">{{course.description}}<br></p>
+            <p style="line-height: 1.7rem;font-family: Montserrat; padding-top: 8px;">{{learnership.description}}<br></p>
         </div>
     </div>
     <div>
@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-12"><img src="{{ course.image.url }}" padding-top: 8px; style="width: 358px;"></div>
+                        <div class="col-md-12"><img src="{{ learnership.image.url }}" padding-top: 8px; style="width: 358px;"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -74,7 +74,7 @@
                 <!-- Card body -->
                 <div id="collapseTwo1" class="collapse " role="tabpanel" aria-labelledby="headingTwo1" data-parent="#accordionEx1">
                   <div class="card-body text-dark">
-                  {{ course.expectations}}</div>
+                  {{ learnership.expectations}}</div>
                 </div>
 
               </div>
@@ -101,7 +101,7 @@
                 <!-- Card body -->
                 <div id="collapseTwo21" class="collapse " role="tabpanel" aria-labelledby="headingTwo21" data-parent="#accordionEx1">
                   <div class="card-body text-dark">
-                {{ course.modules}}
+                {{ learnership.modules}}
                   </div>
                 </div>
 
@@ -137,16 +137,16 @@
                     </div>
                     <div class="row" style="font-family: Roboto;font-size: 12px;margin-top: 12px;">
                         <div class="col-md-12">
-                            <p>DURATION:&nbsp;<strong>{{ course.duration}}</strong><br></p>
+                            <p>DURATION:&nbsp;<strong>{{ learnership.duration}}</strong><br></p>
                         </div>
                         <div class="col-md-12">
-                            <p>START DATE:&nbsp;<strong>{{ course.start_date}}</strong><br></p>
+                            <p>START DATE:&nbsp;<strong>{{ learnership.start_date}}</strong><br></p>
                         </div>
                         <div class="col-md-12">
-                            <p>CREDIT:&nbsp;<strong>{{ course.credit}}</strong><br></p>
+                            <p>CREDIT:&nbsp;<strong>{{ learnership.credit}}</strong><br></p>
                         </div>
                         <div class="col-md-12">
-                            <p>PRICE:&nbsp;<strong>{{ course.credit}}</strong><br></p>
+                            <p>PRICE:&nbsp;<strong>{{ learnership.credit}}</strong><br></p>
                         </div>
                     </div>
                 </div>
