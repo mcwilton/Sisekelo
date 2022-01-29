@@ -1,5 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+import string
+import random
+
+length = 6
+all = "2022" + string.ascii_uppercase + string.digits
+student_id_generation = "".join(random.sample(all,length))
+
+# print(f"2022-{password}")
 
 
 # Extending User Model Using a One-To-One Link
@@ -14,7 +22,7 @@ from django.contrib.auth.models import User
 #     # address  = models.CharField(max_length=255, null=True, blank=True)
 #     # number   = models.CharField(max_length=32, null=True, blank=True)
 #     # city     = models.CharField(max_length=50, null=True, blank=True)
-    
+
 
 #     # @property
 #     # def get_avatar(self):
@@ -34,6 +42,7 @@ class Profile(models.Model):
 
     # Managed fields
     user     = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
+    student_id = models.CharField(max_length=32, null=True, default=student_id_generation)
     # avatar   = models.ImageField(upload_to="profile_images", null=True, blank=True)
     avatar = models.ImageField(default='default.jpg', upload_to='profile_images')
     bio = models.TextField()

@@ -41,23 +41,31 @@ class Accredited_Program(models.Model):
         ('draft', 'Draft'),
         ('published', 'Published'),
     )
+    PAYMENT_OPTIONS= (
+        ('EFT', 'EFT'),
+        ('CARDS', 'CARDS'),
+        ('TRANSFER', 'TRANSFER'),
+    )
 
-    program_type = models.CharField(max_length=50, choices=ACCREDITED_TYPE, default='Learnership') 
+    program_type = models.CharField(max_length=50, choices=ACCREDITED_TYPE, default='Learnership')
     title = models.CharField(max_length=200)
     certificate_type = models.CharField(max_length=50, choices=CERTIFICATE_TYPE, default='National Certificate')
     description = models.TextField(blank=True, null=True )
     image = models.ImageField(upload_to='uploads/learnership_images/', null=True)
     mode_of_delivery = models.CharField(max_length=10, choices=MODE_OF_DELIVERY)
+    target_audience =  models.CharField(max_length=50, null=True)
+    # outcomes = models.TextField(null=False, default="")
+    modules = models.TextField(null=True, default="")
+    expectations = models.TextField(blank=True)
+    career_prospects =  models.TextField(blank=True, null=True )
+    payment_type = models.CharField(max_length=50, choices=PAYMENT_OPTIONS, default='EFT')
     nfq_level = models.ForeignKey(Nfq, on_delete=models.CASCADE, related_name="nfqlevel1", default="1")
     credits = models.IntegerField(null=False, default="130")
-    # outcomes = models.TextField(null=False, default="")
-    expectations = models.TextField(blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
     # duration = models.DurationField(null=False)
     duration = models.CharField(max_length=50, null=True)
     start_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=None)
     end_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=None)
-    modules = models.TextField(null=True, default="")
     brochure = models.FileField(upload_to='uploads/learnership_brochures', null=False, default="")
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
     slug = models.SlugField(max_length=200, primary_key=True, auto_created=False, default = "")
@@ -90,7 +98,7 @@ class Specialized_Course(models.Model):
         ('draft', 'Draft'),
         ('published', 'Published'),
     )
-    program_type = models.CharField(max_length=50, choices=ACCREDITED_TYPE, default='Work Readiness Program') 
+    program_type = models.CharField(max_length=50, choices=ACCREDITED_TYPE, default='Work Readiness Program')
     title = models.CharField(max_length=200)
     overview = models.TextField(null=False, default="")
     description = models.TextField(blank=False, null=True)
@@ -100,7 +108,7 @@ class Specialized_Course(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
     duration = models.CharField(max_length=50, null=True)
     start_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=None)
-    end_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=None) 
+    end_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=None)
     specialized_brochure = models.FileField(upload_to='uploads/learnership_brochures', null=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
 
@@ -146,13 +154,13 @@ class Learnership(models.Model):
     updated_at = models.DateTimeField (auto_now=True)
 
     def __str__(self):
-        return self.title  
+        return self.title
 
     # def save(self, *args, **kwargs):
     #     self.slug = slugify(self.title)
     #     super(Course, self).save(*args, **kwargs)
 
-    
+
 class Short_Course(models.Model):
     STATUS_CHOICES = (
         ('draft', 'Draft'),

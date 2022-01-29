@@ -35,7 +35,7 @@ def index(request):
     images = Carousel.objects.all()[:1]
     jobs = Learnership.objects.all().count()
     company_name = Learnership.objects.all()
-    paginator = Paginator(qs, 5)  
+    paginator = Paginator(qs, 5)
     page = request.GET.get('page')
     try:
         qs = paginator.page(page)
@@ -96,7 +96,7 @@ def test(request):
 
 def aprograms(request):
     # queryset = images = Carousel.objects.all()
-    queryset = Accredited_Program.objects.all()
+    queryset = Learnership.objects.all()
 
     paginate = Paginator(queryset, 5)  # Show 5 courses per page
     page = request.GET.get('page')
@@ -112,7 +112,7 @@ def aprograms(request):
 
 def corporate(request):
     # queryset = images = Carousel.objects.all()
-    queryset = Accredited_Program.objects.all()
+    queryset = Learnership.objects.all()
 
     paginate = Paginator(queryset, 5)  # Show 5 courses per page
     page = request.GET.get('page')
@@ -129,7 +129,7 @@ def corporate(request):
 
 def learnerships(request):
     # queryset = images = Carousel.objects.all()
-    queryset = Accredited_Program.objects.all()
+    queryset = Learnership.objects.all()
 
     paginate = Paginator(queryset, 5)  # Show 5 courses per page
     page = request.GET.get('page')
@@ -164,4 +164,4 @@ class LearnershipDetailView(View):
         learnership = get_object_or_404(Learnership, slug=slug)
         # lesson = get_object_or_404(Lesson, slug=lesson_slug)
         context = {'learnership':learnership}
-        return render(request, "courses/course_detail.html", context)
+        return render(request, "courses/learnership_detail.html", context)
