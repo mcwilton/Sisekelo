@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'accounts',
     'contact',
     'rest_framework',
+    'inventory',
 
 ]
 
