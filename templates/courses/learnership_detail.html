@@ -3,6 +3,10 @@
 {% load static %}
 
 {% block content %}
+<<<<<<< HEAD
+ {% load crispy_forms_tags %}
+=======
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
 
 
 <head>
@@ -13,27 +17,51 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css?h=18313f04cea0e078412a028c5361bd4e">
     <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css?h=18313f04cea0e078412a028c5361bd4e">
     <link rel="stylesheet" href="assets/css/styles.min.css?h=9032f2dedde532e76e6f68d52a6c5dba">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+=======
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
 
     <style>
         .jumbotronus {
             background: url("https://www.sisekelo.co.za/images/digital/Artificial-Intelligence.jpg") center center / cover no-repeat;
         }
+<<<<<<< HEAD
+        .img {
+
+        }
+=======
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
 </style>
 </head>
 
 <body>
     <div class="jumbotronus"  >
         <h1 class="text-center" style="font-size: 50px;color: rgb(244,244,244);padding-top: 10px;font-family: Inter;">{{learnership.title|capfirst}}</h1>
+<<<<<<< HEAD
+        <p class="text-center" style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;font-family: Inter;">{{course.description| truncatewords:20}}"<br></p>
+=======
         <p class="text-center" style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;font-family: Inter;">{{learnership.description| truncatewords:20}}"<br></p>
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
         <p class="text-center" style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;margin-top: -20px;">- Sisekelo</p>
     </div>
     <div>
         <div class="container">
+<<<<<<< HEAD
+            <h1 class="text-left" style="margin-top: 0px;margin-bottom: 0px;padding-top: 12px;font-family: Inter;"> {{learnership.certificate_type}}</h1>
+            <hr style="border-width: 2px;border-color: orange;margin-top: 25px;border-bottom-style: solid;border-top-style: solid;height: auto;border-bottom-width: 0;flex-grow: 2;box-sizing: border-box;display: block;">
+        </div>
+        <div class="container">
+            <p style="line-height: 1.7rem; padding-top: 8px; padding-bottom: 10px;">{{learnership.description}}<br></p>
+=======
             <h1 class="text-left" style="margin-top: 0px;margin-bottom: 0px;padding-top: 20px;font-family: Inter;">{{learnership.program_type}} | {{learnership.certificate_type}}</h1>
             <hr style="border-width: 2px;border-color: orange;margin-top: 25px;border-bottom-style: solid;border-top-style: solid;height: auto;border-bottom-width: 0;flex-grow: 2;box-sizing: border-box;display: block;">
         </div>
         <div class="container">
             <p style="line-height: 1.7rem;font-family: Montserrat; padding-top: 8px;">{{learnership.description}}<br></p>
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
         </div>
     </div>
     <div>
@@ -41,13 +69,27 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
+<<<<<<< HEAD
+                        <div class="col-md-12"><img src="{{ learnership.image.url }}" padding-top: 8px; border-radius: 1.5rem; style="width: 358px;" class="rounded"></div>
+=======
                         <div class="col-md-12"><img src="{{ learnership.image.url }}" padding-top: 8px; style="width: 358px;"></div>
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row">
                                 <br>
+<<<<<<< HEAD
+                              <p>  <div class="badge badge-primary px-2 py-1 mb-3"><a href="{% url 'post_new' %}" class="course_links" >Enroll With Us</a></div> </p>
+
+
+                              <span class="badge badge-primary px-2 py-1 mb-3"> <a href="{{ learnership.brochure.url }}" download class="course_links" >Download Brochure</a> </span>
+
+                             <span class="badge badge-primary px-2 py-1 mb-3"> <a href="#" class="course_links" >Payment Options</a> </span>
+
+=======
                               <p>  <div class="col"><a href="{% url 'post_new' %}" class="course_links" >Enroll With Us</a></div> </p>
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
                             </div>
                         </div>
                     </div>
@@ -66,7 +108,11 @@
                 <div class="card-header" role="tab" id="headingTwo1">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
                     <h5 class="mb-0 text-dark"> <i class="fas fa-angle-down rotate-icon"></i>
+<<<<<<< HEAD
+                      Course Overview
+=======
                       Expectations?
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
                     </h5>
                   </a>
                 </div>
@@ -115,7 +161,11 @@
                 <div class="card-header " role="tab" id="headingThree31">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31" aria-expanded="false" aria-controls="collapseThree31">
                     <h5 class="mb-0 text-dark"><i class="fas fa-angle-down rotate-icon"></i>
+<<<<<<< HEAD
+                      Target Audience
+=======
                       Career Prospects 
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
                     </h5>
                   </a>
                 </div>
@@ -123,19 +173,50 @@
                 <!-- Card body -->
                 <div id="collapseThree31" class="collapse " role="tabpanel" aria-labelledby="headingThree31" data-parent="#accordionEx1">
                   <div class="card-body text-dark">
+<<<<<<< HEAD
+                    Anyone who wants to get into programming
+=======
                     You will become an Aritificial Intelligence Engineer
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
                   </div>
                 </div>
 
               </div>
               <!-- Accordion card -->
+<<<<<<< HEAD
+              <!-- Accordion card -->
+              <div class="card grey lighten-2" style="padding: 2px; margin-bottom:6px;margin-right:-50px; border-radius:0.5rem">
+
+                <!-- Card header -->
+                <div class="card-header " role="tab" id="headingThree31">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31" aria-expanded="false" aria-controls="collapseThree31">
+                    <h5 class="mb-0 text-dark"><i class="fas fa-angle-down rotate-icon"></i>
+                      Career Prospects
+                    </h5>
+                  </a>
+                </div>
+
+                <!-- Card body -->
+                <div id="collapseThree31" class="collapse " role="tabpanel" aria-labelledby="headingThree31" data-parent="#accordionEx1">
+                  <div class="card-body text-dark">
+                    You will become an Artificial Intelligence Engineer
+                  </div>
+                </div>
+
+              </div>
+=======
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
 
             </div>
             <!-- Accordion wrapper -->
 
          </div>
                     </div>
+<<<<<<< HEAD
+                    <div class="row" style="margin-top: 12px;">
+=======
                     <div class="row" style="font-family: Roboto;font-size: 12px;margin-top: 12px;">
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
                         <div class="col-md-12">
                             <p>DURATION:&nbsp;<strong>{{ learnership.duration}}</strong><br></p>
                         </div>
@@ -146,6 +227,11 @@
                             <p>CREDIT:&nbsp;<strong>{{ learnership.credit}}</strong><br></p>
                         </div>
                         <div class="col-md-12">
+<<<<<<< HEAD
+                            <p>PRICE:&nbsp;<strong>{{ learnership.price}}</strong><br></p>
+                        </div>
+
+=======
                             <p>PRICE:&nbsp;<strong>{{ learnership.credit}}</strong><br></p>
                         </div>
                     </div>
@@ -295,12 +381,16 @@
                     <div class="arrow"> 
 
                         <i class="glyphicon glyphicon-arrow-down">  </i>
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+
+=======
 </div>
 
      
@@ -309,6 +399,7 @@
 
                         </div></div></div></div></div>
     </div>
+>>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
     <script src="assets/js/jquery.min.js?h=83e266cb1712b47c265f77a8f9e18451"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js?h=e46528792882c54882f660b60936a0fc"></script>
     <script src="assets/js/script.min.js?h=cff910a810e90956e2f5b79da0aaa218"></script>
