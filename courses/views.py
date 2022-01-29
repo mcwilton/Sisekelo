@@ -35,11 +35,7 @@ def index(request):
     images = Carousel.objects.all()[:1]
     jobs = Learnership.objects.all().count()
     company_name = Learnership.objects.all()
-<<<<<<< HEAD
-    paginator = Paginator(qs, 5)
-=======
     paginator = Paginator(qs, 4)  
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
     page = request.GET.get('page')
     try:
         qs = paginator.page(page)
@@ -100,7 +96,7 @@ def test(request):
 
 def aprograms(request):
     # queryset = images = Carousel.objects.all()
-    queryset = Learnership.objects.all()
+    queryset = Accredited_Program.objects.all()
 
     paginate = Paginator(queryset, 5)  # Show 5 courses per page
     page = request.GET.get('page')
@@ -116,7 +112,7 @@ def aprograms(request):
 
 def corporate(request):
     # queryset = images = Carousel.objects.all()
-    queryset = Learnership.objects.all()
+    queryset = Accredited_Program.objects.all()
 
     paginate = Paginator(queryset, 5)  # Show 5 courses per page
     page = request.GET.get('page')
@@ -133,7 +129,7 @@ def corporate(request):
 
 def learnerships(request):
     # queryset = images = Carousel.objects.all()
-    queryset = Learnership.objects.all()
+    queryset = Accredited_Program.objects.all()
 
     paginate = Paginator(queryset, 5)  # Show 5 courses per page
     page = request.GET.get('page')

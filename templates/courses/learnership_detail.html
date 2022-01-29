@@ -1,67 +1,48 @@
-
 {% extends 'base/base.html' %}
 {% load static %}
 
 {% block content %}
-<<<<<<< HEAD
- {% load crispy_forms_tags %}
-=======
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
 
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Sikelelo</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=78fc49e7d767d05ab2402bbffd54bf27">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css?h=18313f04cea0e078412a028c5361bd4e">
-    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css?h=18313f04cea0e078412a028c5361bd4e">
-    <link rel="stylesheet" href="assets/css/styles.min.css?h=9032f2dedde532e76e6f68d52a6c5dba">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Sikelelo</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=78fc49e7d767d05ab2402bbffd54bf27">
+        <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css?h=18313f04cea0e078412a028c5361bd4e">
+        <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css?h=18313f04cea0e078412a028c5361bd4e">
+        <link rel="stylesheet" href="assets/css/styles.min.css?h=9032f2dedde532e76e6f68d52a6c5dba">
 
-=======
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
+        <style>
+            .jumbotronus {
+                background: url("https://www.sisekelo.co.za/images/digital/Artificial-Intelligence.jpg") center center / cover no-repeat;
+                margin-top: -21px;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
 
-    <style>
-        .jumbotronus {
-            background: url("https://www.sisekelo.co.za/images/digital/Artificial-Intelligence.jpg") center center / cover no-repeat;
-        }
-<<<<<<< HEAD
-        .img {
-
-        }
-=======
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
-</style>
-</head>
-
-<body>
-    <div class="jumbotronus"  >
-        <h1 class="text-center" style="font-size: 50px;color: rgb(244,244,244);padding-top: 10px;font-family: Inter;">{{learnership.title|capfirst}}</h1>
-<<<<<<< HEAD
-        <p class="text-center" style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;font-family: Inter;">{{course.description| truncatewords:20}}"<br></p>
-=======
-        <p class="text-center" style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;font-family: Inter;">{{learnership.description| truncatewords:20}}"<br></p>
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
-        <p class="text-center" style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;margin-top: -20px;">- Sisekelo</p>
+    <body>
+    <div class="jumbotronus">
+        <h1 class="text-center"
+            style="font-size: 50px;color: rgb(244,244,244);padding-top: 10px;font-family: Inter;">{{ learnership.title|capfirst }}</h1>
+        <p class="text-center"
+           style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;font-family: Inter;">{{ learnership.description| truncatewords:20 }}"<br>
+        </p>
+        <p class="text-center"
+           style="font-size: 20px;padding: 0px;padding-top: 46px;color: rgb(255,255,255);padding-right: 0px;margin-right: 0px;padding-bottom: 8px;margin-top: -20px;">
+            - Sisekelo</p>
     </div>
     <div>
         <div class="container">
-<<<<<<< HEAD
-            <h1 class="text-left" style="margin-top: 0px;margin-bottom: 0px;padding-top: 12px;font-family: Inter;"> {{learnership.certificate_type}}</h1>
+            <h1 class="text-left"
+                style="margin-top: 0px;margin-bottom: 0px;padding-top: 20px;">{{ learnership.program_type }}
+                | {{ learnership.certificate_type }}</h1>
             <hr style="border-width: 2px;border-color: orange;margin-top: 25px;border-bottom-style: solid;border-top-style: solid;height: auto;border-bottom-width: 0;flex-grow: 2;box-sizing: border-box;display: block;">
         </div>
         <div class="container">
-            <p style="line-height: 1.7rem; padding-top: 8px; padding-bottom: 10px;">{{learnership.description}}<br></p>
-=======
-            <h1 class="text-left" style="margin-top: 0px;margin-bottom: 0px;padding-top: 20px;font-family: Inter;">{{learnership.program_type}} | {{learnership.certificate_type}}</h1>
-            <hr style="border-width: 2px;border-color: orange;margin-top: 25px;border-bottom-style: solid;border-top-style: solid;height: auto;border-bottom-width: 0;flex-grow: 2;box-sizing: border-box;display: block;">
-        </div>
-        <div class="container">
-            <p style="line-height: 1.7rem;font-family: Montserrat; padding-top: 8px;">{{learnership.description}}<br></p>
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
+            <p style="font-size: 14px; line-height: 2rem; padding-top: 8px;">{{ learnership.description }}<br>
+            </p>
         </div>
     </div>
     <div>
@@ -69,27 +50,30 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
-<<<<<<< HEAD
-                        <div class="col-md-12"><img src="{{ learnership.image.url }}" padding-top: 8px; border-radius: 1.5rem; style="width: 358px;" class="rounded"></div>
-=======
-                        <div class="col-md-12"><img src="{{ learnership.image.url }}" padding-top: 8px; style="width: 358px;"></div>
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
+                        <br/>
+                    <div ><img src="{{ learnership.image.url }}" margin-top: 18px;
+                                                    style="width: 358px; border-radius: 40px; margin: 20px;" >
+
+
+           
+                    <span class="badge-coursepage badge-primary px-2 py-1 mb-3" ><a href="{% url 'post_new' %}" class="course_links-course-page" >Enroll With Us   </a> </span>
+
+                     <span class="badge-coursepage badge-primary px-2 py-1 mb-3"> <a href="{{ q.brochure.url }}" download class="course_links-course-page" >Download Brochure</a> </span>
+
+                                                </div>
+                    </div>
+                    <div>
+                       
+
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row">
                                 <br>
-<<<<<<< HEAD
-                              <p>  <div class="badge badge-primary px-2 py-1 mb-3"><a href="{% url 'post_new' %}" class="course_links" >Enroll With Us</a></div> </p>
-
-
-                              <span class="badge badge-primary px-2 py-1 mb-3"> <a href="{{ learnership.brochure.url }}" download class="course_links" >Download Brochure</a> </span>
-
-                             <span class="badge badge-primary px-2 py-1 mb-3"> <a href="#" class="course_links" >Payment Options</a> </span>
-
-=======
-                              <p>  <div class="col"><a href="{% url 'post_new' %}" class="course_links" >Enroll With Us</a></div> </p>
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
+                                <p>
+                    <div >
+                                </div>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -98,318 +82,174 @@
                     <div class="row">
                         <div class="col-md-12">
 
-            <!-- Accordion wrapper -->
-            <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+                            <!-- Accordion wrapper -->
+                            <div class="accordion md-accordion" id="accordionEx1" role="tablist"
+                                 aria-multiselectable="true">
 
-              <!-- Accordion card -->
-              <div class="card grey lighten-2" style="padding-left: 10px; margin-bottom:6px; margin-right:-50px;  border-radius:0.5rem">
+                                <!-- Accordion card -->
+                                <div class="card grey lighten-2"
+                                     style="padding-left: 10px; margin-bottom:6px; margin-right:-50px; margin-top:30px;  border-radius:0.5rem">
 
-                <!-- Card header -->
-                <div class="card-header" role="tab" id="headingTwo1">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
-                    <h5 class="mb-0 text-dark"> <i class="fas fa-angle-down rotate-icon"></i>
-<<<<<<< HEAD
-                      Course Overview
-=======
-                      Expectations?
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
-                    </h5>
-                  </a>
-                </div>
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" id="headingTwo1">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1"
+                                           href="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+                                            <h5 class="mb-0 text-dark"><i class="fas fa-angle-down rotate-icon"></i>
+                                                Course Details
+                                            </h5>
+                                        </a>
+                                    </div>
 
-                <!-- Card body -->
-                <div id="collapseTwo1" class="collapse " role="tabpanel" aria-labelledby="headingTwo1" data-parent="#accordionEx1">
-                  <div class="card-body text-dark">
-                  {{ learnership.expectations}}</div>
-                </div>
+                                    <!-- Card body -->
+                                    <div id="collapseTwo1" class="collapse " role="tabpanel"
+                                         aria-labelledby="headingTwo1" data-parent="#accordionEx1">
+                                        <div class="card-body text-dark">
+                                            {{ learnership.expectations }}</div>
+                                    </div>
 
-              </div>
-
-
+                                </div>
 
 
-              <!-- Accordion card -->
+                                <!-- Accordion card -->
 
-              <!-- Accordion card -->
-              <div class="card grey lighten-2" style="padding: 2px; margin-bottom:6px; margin-right:-50px; border-radius:0.5rem">
+                                <!-- Accordion card -->
+                                <div class="card grey lighten-2"
+                                     style="padding: 2px; margin-bottom:6px; margin-right:-50px; border-radius:0.5rem">
 
-                <!-- Card header -->
-
-
-                <div class="card-header " role="tab" id="headingTwo2">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo21" aria-expanded="false" aria-controls="collapseTwo21">
-                    <h5 class="mb-0 text-dark"><i class="fas fa-angle-down rotate-icon"></i>
-                      Modules
-                    </h5>
-                  </a>
-                </div>
-
-                <!-- Card body -->
-                <div id="collapseTwo21" class="collapse " role="tabpanel" aria-labelledby="headingTwo21" data-parent="#accordionEx1">
-                  <div class="card-body text-dark">
-                {{ learnership.modules}}
-                  </div>
-                </div>
-
-              </div>
-              <!-- Accordion card -->
-
-              <!-- Accordion card -->
-              <div class="card grey lighten-2" style="padding: 2px; margin-bottom:6px;margin-right:-50px; border-radius:0.5rem">
-
-                <!-- Card header -->
-                <div class="card-header " role="tab" id="headingThree31">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31" aria-expanded="false" aria-controls="collapseThree31">
-                    <h5 class="mb-0 text-dark"><i class="fas fa-angle-down rotate-icon"></i>
-<<<<<<< HEAD
-                      Target Audience
-=======
-                      Career Prospects 
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
-                    </h5>
-                  </a>
-                </div>
-
-                <!-- Card body -->
-                <div id="collapseThree31" class="collapse " role="tabpanel" aria-labelledby="headingThree31" data-parent="#accordionEx1">
-                  <div class="card-body text-dark">
-<<<<<<< HEAD
-                    Anyone who wants to get into programming
-=======
-                    You will become an Aritificial Intelligence Engineer
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
-                  </div>
-                </div>
-
-              </div>
-              <!-- Accordion card -->
-<<<<<<< HEAD
-              <!-- Accordion card -->
-              <div class="card grey lighten-2" style="padding: 2px; margin-bottom:6px;margin-right:-50px; border-radius:0.5rem">
-
-                <!-- Card header -->
-                <div class="card-header " role="tab" id="headingThree31">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31" aria-expanded="false" aria-controls="collapseThree31">
-                    <h5 class="mb-0 text-dark"><i class="fas fa-angle-down rotate-icon"></i>
-                      Career Prospects
-                    </h5>
-                  </a>
-                </div>
-
-                <!-- Card body -->
-                <div id="collapseThree31" class="collapse " role="tabpanel" aria-labelledby="headingThree31" data-parent="#accordionEx1">
-                  <div class="card-body text-dark">
-                    You will become an Artificial Intelligence Engineer
-                  </div>
-                </div>
-
-              </div>
-=======
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
-
-            </div>
-            <!-- Accordion wrapper -->
-
-         </div>
-                    </div>
-<<<<<<< HEAD
-                    <div class="row" style="margin-top: 12px;">
-=======
-                    <div class="row" style="font-family: Roboto;font-size: 12px;margin-top: 12px;">
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
-                        <div class="col-md-12">
-                            <p>DURATION:&nbsp;<strong>{{ learnership.duration}}</strong><br></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>START DATE:&nbsp;<strong>{{ learnership.start_date}}</strong><br></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>CREDIT:&nbsp;<strong>{{ learnership.credit}}</strong><br></p>
-                        </div>
-                        <div class="col-md-12">
-<<<<<<< HEAD
-                            <p>PRICE:&nbsp;<strong>{{ learnership.price}}</strong><br></p>
-                        </div>
-
-=======
-                            <p>PRICE:&nbsp;<strong>{{ learnership.credit}}</strong><br></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container" style="margin-top: 45px;">
-        <h1 class="text-left" style="margin-top: 0px;margin-bottom: 0px;padding-top: 20px;font-family: Inter;">Enquire Now</h1>
-        <hr style="border-width: 2px;border-color: orange;margin-top: 25px;border-bottom-style: solid;border-top-style: solid;height: auto;border-bottom-width: 0;flex-grow: 2;box-sizing: border-box;display: block;">
-        <div class="container">
-            <div class="intro"></div><div class="container c1">
+                                    <!-- Card header -->
 
 
-    <div class="container">
+                                    <div class="card-header " role="tab" id="headingTwo2">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1"
+                                           href="#collapseTwo21" aria-expanded="false" aria-controls="collapseTwo21">
+                                            <h5 class="mb-0 text-dark"><i class="fas fa-angle-down rotate-icon"></i>
+                                                Course Overview
+                                            </h5>
+                                        </a>
+                                    </div>
+
+                                    <!-- Card body -->
+                                    <div id="collapseTwo21" class="collapse " role="tabpanel"
+                                         aria-labelledby="headingTwo21" data-parent="#accordionEx1">
+                                        <div class="card-body text-dark">
+                                            {{ learnership.modules }}
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Accordion card -->
+
+                                <!-- Accordion card -->
+                                <div class="card grey lighten-2"
+                                     style="padding: 2px; margin-bottom:6px; margin-right:-50px; border-radius:0.5rem">
+
+                                    <!-- Card header -->
 
 
-        <div class="c2">
+                                    <div class="card-header " role="tab" id="headingTwo2">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1"
+                                           href="#collapseTwo51" aria-expanded="false" aria-controls="collapseTwo21">
+                                            <h5 class="mb-0 text-dark"><i class="fas fa-angle-down rotate-icon"></i>
+                                                Target Audience
+                                            </h5>
+                                        </a>
+                                    </div>
+
+                                    <!-- Card body -->
+                                    <div id="collapseTwo21" class="collapse " role="tabpanel"
+                                         aria-labelledby="headingTwo51" data-parent="#accordionEx1">
+                                        <div class="card-body text-dark">
+                                            {{ learnership.target_audience }}
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Accordion card -->
+
+                                <!-- Accordion card -->
+                                <div class="card grey lighten-2"
+                                     style="padding: 2px; margin-bottom:6px; margin-right:-50px; border-radius:0.5rem">
+
+                                    <!-- Card header -->
 
 
-            <div></div>
+                                    <div class="card-header " role="tab" id="headingTwo2">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1"
+                                           href="#collapseTwo41" aria-expanded="false" aria-controls="collapseTwo21">
+                                            <h5 class="mb-0 text-dark"><i class="fas fa-angle-down rotate-icon"></i>
+                                                Payment Options
+                                            </h5>
+                                        </a>
+                                    </div>
 
+                                    <!-- Card body -->
+                                    <div id="collapseTwo41" class="collapse " role="tabpanel"
+                                         aria-labelledby="headingTwo41" data-parent="#accordionEx1">
+                                        <div class="card-body text-dark">
+                                            {{ learnership.payments_options }}
+                                        </div>
+                                    </div>
 
-            </div>
+                                </div>
+                                <!-- Accordion card -->
 
-</div>
+                                <!-- Accordion card -->
+                                <div class="card grey lighten-2"
+                                     style="padding: 2px; margin-bottom:6px;margin-right:-50px; border-radius:0.5rem">
 
-<div>
+                                    <!-- Card header -->
+                                    <div class="card-header " role="tab" id="headingThree31">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1"
+                                           href="#collapseThree31" aria-expanded="false"
+                                           aria-controls="collapseThree31">
+                                            <h5 class="mb-0 text-dark"><i class="fas fa-angle-down rotate-icon"></i>
+                                                Career Prospects
+                                            </h5>
+                                        </a>
+                                    </div>
 
-    <div class="c3">
+                                    <!-- Card body -->
+                                    <div id="collapseThree31" class="collapse " role="tabpanel"
+                                         aria-labelledby="headingThree31" data-parent="#accordionEx1">
+                                        <div class="card-body text-dark">
+                                             {{ learnership.career_prospects }}
+                                        </div>
+                                    </div>
 
-
-                <div >
-
-                        <form method="post" enctype="multipart/form-data"  action="" novalidate=""> 
-
- <input type="hidden" value="">
-
-                        <div>
-
-                            <div>
-
-                            <fieldset><legend>Name
-
-                                <span>
-
-                                    <span>(Required)</span>
-
-                                </span>
-
-                            </legend>
-
-                                <div>
-                            
-                            <span>
-                              <label for="">First</label>
-        <input type="text" value="" aria-required="true">
-                                                  
-                                                </span>
-                            
-                            <span><label for="input_1_1_6">Last</label>
-                                                    <input type="text" name="input_1.6" id="input_1_1_6" value="" aria-required="true">
-
-                                                    
-                                                </span>
-                            
-                        </div>
-
-                    </fieldset>
-
-                    <div id="field_1_2">
-
-                        <label for="input_1_2">Contact number
-
-                            <span>
-
-                                <span>(Required)</span>
-
-                            </span></label>
-
-                            <div>
-
-                                <input type="text" name="input_1.6" id="input_1_1_6" value="" aria-required="true"></div>
+                                </div>
+                                <!-- Accordion card -->
 
                             </div>
-
-                            <div id="field_1_3" class="">
-
-                                <label for="input_1_3">Email
-
-                                    <span>
-
-                                        <span>(Required)</span>
-
-                                    </span></label>
-
-                                    <div>
-
-                            <input name="input_3" id="input_1_3" type="email" value="" class="large" aria-required="true" aria-invalid="false">
-
+                            <!-- Accordion wrapper -->
 
                         </div>
-
                     </div>
-                    <div id="field_1_5" ><label for="input_1_5">List any previous courses or degrees you have completed<span ><span>(Required)</span>
-
-                    </span>
-
-                </label>
-
-                <div><input name="input_5" id="input_1_5" type="text" value="" class="large" aria-required="true" aria-invalid="false"> 
-
-                </div></div>
-
-                <div id="field_1_7">
-
-                    <label for="input_1_7">Programme of lnterest<span>
-
-                    <span>(Required)</span>
-
-                </span></label>
-
-                <div>
-
-                    <div>
-
-                    <select class="selected" name="input_7" id="input_1_7"  aria-required="true" aria-invalid="false">
-
-                        <option value="Doctorate of Business Management">Doctorate of Business Management</option>
-                        <option value="Master of Business Administration">Master of Business Administration</option>
-                        <option value="Postgraduate Diploma in Business Management">Postgraduate Diploma in Business Management</option>
-                        <option value="Master of Public Management">Master of Public Management</option>
-                        <option value="Postgraduate Diploma in Public Management">Postgraduate Diploma in Public Management</option>
-                        <option value="Bachelor of Business Administration">Bachelor of Business Administration</option>
-                        <option value="Bachelor of Business Administration (Retail)">Bachelor of Business Administration (Retail)</option>
-                        <option value="Bachelor of Business Administration (Banking)">Bachelor of Business Administration (Banking)</option>
-                        <option value="Higher Certificate in Business Management">Higher Certificate in Business Management</option>
-                        <option value="Higher Certificate in Business Management: Retail">Higher Certificate in Business Management: Retail</option>
-                        <option value="Higher Certificate in Business Management: Credit Banking">Higher Certificate in Business Management: Credit Banking</option>
-                        <option value="Master of Public Management">Master of Public Management</option>
-                        <option value="Higher Certificate in Public Management">Higher Certificate in Public Management</option>
-                        <option value="National Diploma in Public Administration">National Diploma in Public Administration</option>
-                        <option value="Bachelor of Accounting Science">Bachelor of Accounting Science</option>
-
-                    </select>
-
-                    <div class="arrow"> 
-
-                        <i class="glyphicon glyphicon-arrow-down">  </i>
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
-
+                    <div class="row" style="font-family: Roboto;font-size: 14px;margin-top: 12px;">
+                        <div class="col-md-12">
+                            <p>DURATION:&nbsp;<strong>{{ learnership.duration }}</strong><br></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>START DATE:&nbsp;<strong>{{ learnership.start_date | date:"F d, Y"  }}</strong><br></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>CREDIT:&nbsp;<strong>{{ learnership.credit }}</strong><br></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>PRICE:&nbsp;<strong>{{ learnership.credit }}</strong><br></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-
-=======
-</div>
-
-     
-                        </form>
-
-
-                        </div></div></div></div></div>
-    </div>
->>>>>>> 3a347f7fa46debb3bc9a87fcd74ed5e0e04db1cb
+    <br/>
+    <br/>
+    <br/>
     <script src="assets/js/jquery.min.js?h=83e266cb1712b47c265f77a8f9e18451"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js?h=e46528792882c54882f660b60936a0fc"></script>
     <script src="assets/js/script.min.js?h=cff910a810e90956e2f5b79da0aaa218"></script>
-</body>
+    </body>
 
-</html>
-
-
-
-
-
+    </html>
 
 {% endblock %}

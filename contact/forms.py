@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Contact, Enquiry
+from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
@@ -9,10 +9,4 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = '__all__'
 
-
-
-class EnquiryForm(forms.ModelForm):
-    class Meta:
-        model = Enquiry
-        fields = '__all__'
-
+        

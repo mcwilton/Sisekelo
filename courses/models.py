@@ -37,6 +37,16 @@ class Accredited_Program(models.Model):
         ('Physical', 'Physical'),
         ('Hybrid', 'Hybrid'),
     )
+    TARGET_AUDIENCE = (
+        ('Beginner', 'Beginner'),
+        ('Upskilling', 'Upskilling'),
+        ('Expert', 'Expert'),
+    )
+    PAYMENT_OPTION = (
+        ('EFT', 'EFT'),
+        ('CARD', 'CARD'),
+        ('BANK TRANSFER', 'BANK TRANSFER'),
+    )
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published'),
@@ -48,16 +58,19 @@ class Accredited_Program(models.Model):
     description = models.TextField(blank=True, null=True )
     image = models.ImageField(upload_to='uploads/learnership_images/', null=True)
     mode_of_delivery = models.CharField(max_length=10, choices=MODE_OF_DELIVERY)
+    target_audiences = models.CharField(max_length=50, choices=TARGET_AUDIENCE, default="Beginner")
+    career_prospects = models.TextField(null=False, default="")
     nfq_level = models.ForeignKey(Nfq, on_delete=models.CASCADE, related_name="nfqlevel1", default="1")
     credits = models.IntegerField(null=False, default="130")
     # outcomes = models.TextField(null=False, default="")
     expectations = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
+    modules = models.TextField(null=True, default="")
+    price = models.DecimalField(max_digits=10, decimal_places=4, null=True)
+    payment_options = models.CharField(max_length=50, choices=PAYMENT_OPTION, default="Beginner")
     # duration = models.DurationField(null=False)
     duration = models.CharField(max_length=50, null=True)
     start_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=None)
-    end_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=None)
-    modules = models.TextField(null=True, default="")
+    end_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=None) 
     brochure = models.FileField(upload_to='uploads/learnership_brochures', null=False, default="")
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
     slug = models.SlugField(max_length=200, primary_key=True, auto_created=False, default = "")

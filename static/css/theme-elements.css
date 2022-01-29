@@ -1346,8 +1346,9 @@ Theme Version:	8.3.0
 	background-color: #e6e6e6;
 	border-color: orangered;
 	padding-top: 3%;
-	
+	margin-bottom: 1%;
 	margin-left: 8px;
+	width: 21rem;
 }
 
 .hr-custom {
@@ -1408,6 +1409,12 @@ Theme Version:	8.3.0
 	background-color: #17a2b8;
 	color: #FFF;
 }
+
+.badge-course-page{
+	background-color: #212529;
+	color: #FFF;
+}
+
 
 .badge-dark {
 	background-color: #212529;
@@ -2045,7 +2052,7 @@ html body.body .btn:active {
 }
 
 .btn-primary:hover, .btn-primary.hover {
-	background-color: #dfdfdf;
+	background-color: s;
 	border-color: #e6e5e5 #e6e5e5 #CCC;
 	color: #FFF;
 }
@@ -2986,7 +2993,7 @@ html.ie9 .call-to-action.button-centered .container > .row > [class*="col-"], ht
 
 .card-body {
 	padding: 32px;
-	padding: 2rem;
+	padding: 0rem;
 }
 
 .card-text-color-hover-light:hover * {

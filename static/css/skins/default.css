@@ -12,10 +12,37 @@ a {
 	color: #4191cd;
 }
 
+
+.badge-coursepage{    
+	display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #777777;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+a.course_links-course-page {
+	font-size: 25px;
+	margin: 50px;
+	background-color: #0088CC;
+    border-color: #0088CC #0088CC #006699;
+    color: #FFF;
+}
+
 a.course_links {
-	color: #4191cd;
-	font-size: 20px;
-	color: #fffcf3;
+	font-size: 15px;
+	margin: 50px;
+	background-color: #0088CC;
+    border-color: #0088CC #0088CC #006699;
+    color: #FFF;
 }
 
 .p_white {
